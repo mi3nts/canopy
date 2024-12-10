@@ -190,7 +190,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JVLtuT8sySUBbFbLTn6r-55" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#CCCCCC;strokeWidth=3;jumpStyle=arc;flowAnimation=1;flowAnimationDirection=alternate-reverse;flowAnimationTimingFunction=ease-in-out;" edge="1" parent="1" target="JVLtuT8sySUBbFbLTn6r-74">
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-55" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#CCCCCC;strokeWidth=2;jumpStyle=arc;flowAnimation=1;flowAnimationDirection=alternate-reverse;flowAnimationTimingFunction=ease-in-out;" edge="1" parent="1" target="JVLtuT8sySUBbFbLTn6r-74">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="310" y="80" as="sourcePoint" />
             <mxPoint x="350" y="140" as="targetPoint" />
