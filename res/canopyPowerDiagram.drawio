@@ -280,6 +280,17 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-88" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#009900;strokeWidth=2;" edge="1" parent="1" target="JVLtuT8sySUBbFbLTn6r-63">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="100" as="sourcePoint" />
+            <mxPoint x="600" y="140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="600" y="190" />
+              <mxPoint x="640" y="190" />
+              <mxPoint x="640" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
