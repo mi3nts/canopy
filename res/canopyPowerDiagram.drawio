@@ -37,15 +37,6 @@
         <mxCell id="pD8juBFKP1GN8B8eYQTb-1" value="" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.miscellaneous.ac_out" parent="1" vertex="1">
           <mxGeometry x="30" y="400" width="70" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="pD8juBFKP1GN8B8eYQTb-3" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="130" y="100" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="pD8juBFKP1GN8B8eYQTb-15" value="&lt;b&gt;ezOutlet5&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="160" y="110" width="60" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="pD8juBFKP1GN8B8eYQTb-24" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="160" y="220" width="120" height="50" as="geometry" />
-        </mxCell>
         <mxCell id="JVLtuT8sySUBbFbLTn6r-1" value="" style="group" vertex="1" connectable="0" parent="1">
           <mxGeometry x="30" y="480" width="60" height="40" as="geometry" />
         </mxCell>
@@ -63,6 +54,24 @@
         </mxCell>
         <mxCell id="pD8juBFKP1GN8B8eYQTb-11" value="AC" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="JVLtuT8sySUBbFbLTn6r-2" vertex="1">
           <mxGeometry y="5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-9" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="130" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pD8juBFKP1GN8B8eYQTb-3" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="JVLtuT8sySUBbFbLTn6r-9" vertex="1">
+          <mxGeometry width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pD8juBFKP1GN8B8eYQTb-15" value="&lt;b&gt;ezOutlet5&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="JVLtuT8sySUBbFbLTn6r-9" vertex="1">
+          <mxGeometry x="30" y="10" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-11" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="160" y="220" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="pD8juBFKP1GN8B8eYQTb-24" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="JVLtuT8sySUBbFbLTn6r-11" vertex="1">
+          <mxGeometry width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-10" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;12V DC&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="JVLtuT8sySUBbFbLTn6r-11">
+          <mxGeometry x="30" y="10" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
