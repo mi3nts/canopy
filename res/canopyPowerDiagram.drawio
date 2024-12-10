@@ -194,6 +194,21 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-56" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;L&lt;/div&gt;&lt;div&gt;A&lt;/div&gt;&lt;div&gt;Y&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="135" width="30" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-57" value="R1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="105" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-58" value="R2" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="135" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-59" value="R3" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="165" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-60" value="R4" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="195" width="30" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
