@@ -88,7 +88,7 @@
         <mxCell id="JVLtuT8sySUBbFbLTn6r-12" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Power.svg;" parent="JVLtuT8sySUBbFbLTn6r-18" vertex="1">
           <mxGeometry x="10" y="5" width="9.72" height="15" as="geometry" />
         </mxCell>
-        <mxCell id="JVLtuT8sySUBbFbLTn6r-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;strokeColor=#FF3333;strokeWidth=3;flowAnimation=1;jumpStyle=arc;" parent="1" source="pD8juBFKP1GN8B8eYQTb-24" target="JVLtuT8sySUBbFbLTn6r-19" edge="1">
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;strokeColor=#FF3333;strokeWidth=2;flowAnimation=1;jumpStyle=arc;" parent="1" source="pD8juBFKP1GN8B8eYQTb-24" target="JVLtuT8sySUBbFbLTn6r-19" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="JVLtuT8sySUBbFbLTn6r-28" value="" style="group" parent="1" vertex="1" connectable="0">
@@ -100,7 +100,7 @@
         <mxCell id="JVLtuT8sySUBbFbLTn6r-27" value="&lt;font&gt;DC&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="JVLtuT8sySUBbFbLTn6r-28" vertex="1">
           <mxGeometry y="2.5" width="25" height="15" as="geometry" />
         </mxCell>
-        <mxCell id="JVLtuT8sySUBbFbLTn6r-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;flowAnimation=1;strokeColor=#666666;jumpStyle=arc;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="pD8juBFKP1GN8B8eYQTb-24" target="0aRQkGjj-KWWZOeJOGup-9" edge="1">
+        <mxCell id="JVLtuT8sySUBbFbLTn6r-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;flowAnimation=1;strokeColor=#666666;jumpStyle=arc;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="pD8juBFKP1GN8B8eYQTb-24" target="0aRQkGjj-KWWZOeJOGup-9" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="810" y="370" as="targetPoint" />
           </mxGeometry>
