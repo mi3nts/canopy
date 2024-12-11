@@ -13,7 +13,7 @@ Neurtal Cables (green)
 * 30 cm 1x
 
 Live Cable 
-* 
+* 30cm 3x
 
 
 12V DC power output cables
