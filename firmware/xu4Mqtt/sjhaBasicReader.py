@@ -1,7 +1,7 @@
 import serial
 
 # Serial port configuration
-methanePort = "/dev/tty.usbserial-AU0645LQ"  # Replace with your port
+methanePort = "/dev/tty.usbserial-0001"  # Replace with your port
 baudRate = 38400
 
 def main():
