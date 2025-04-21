@@ -60,8 +60,15 @@ Contains firmware for the Community Avian and AirQuality Network for Observing P
   * 3x 25cm
   * 1x 1 to 3 splitter 25cm (10cm + 3x 15cm)
 
+* DC Common Ground Cables (Blue 16AWG)
+  * 3x 15cm 
+  * 1x 20cm
 
-12V DC power output cables
-* 60 cm 1x
-* 100 cm 1x
+* DC Power Cables
+  * 3x Coaxial 
+
+* Ethernet Cables
+  * 3x 30cm (for Odroid N2+ and ezOutlet5)
+  * 1x 60cm (for Network Switch)
+  * 1x 90cm (for LoRaWAN Gateway)
   
