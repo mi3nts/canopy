@@ -37,10 +37,20 @@ Contains firmware for the Community Avian and AirQuality Network for Observing P
 * 1x **Base** (Ozone Pump)
 * 1x **Holder** (for LoRaWAN Gateway)
 * 1x **Holder** (for ezOutlet5)
+* 2x **Holder** (for 5V Power Supply)
+* 3x **Holder** (for 12V Power Supply)
+* 1x **Holder** (for Solid State Relay)
+* 1x **Holder** (for Lightning Arrester)
 
-Earth Cables (green)
-* 15cm 3x
-* 30 cm 1x
+### Miscellaneous
+* 1x **Lightning Arrester** (for LoRaWAN Gateway)
+* 2x **GPS Module**
+* 1x **Ozone Pump** (for Ozone Sensor)
+
+### Wires and Cables
+* Earth Cables (green)
+  * 15cm 3x
+  * 30 cm 1x
   
 Neurtal Cables (green)
 * 15cm 3x
