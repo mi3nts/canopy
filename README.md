@@ -7,7 +7,7 @@ Contains firmware for the Community Avian and AirQuality Network for Observing P
 ## Components
 
 ### Compute Modules
-* 2x Odroid N2+ 
+* 2x **Odroid N2+** 
 
 
 Earth Cables (green)
