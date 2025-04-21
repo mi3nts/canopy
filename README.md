@@ -48,16 +48,17 @@ Contains firmware for the Community Avian and AirQuality Network for Observing P
 * 1x **Ozone Pump** (for Ozone Sensor)
 
 ### Wires and Cables
-* Earth Cables (green)
-  * 15cm 3x
-  * 30 cm 1x
+* AC Earth Cables (Green 16AWG)
+  * 2x 15cm 
+  * 1x 25cm
   
-Neurtal Cables (green)
-* 15cm 3x
-* 30 cm 1x
+* AC Neurtal Cables (White 16AWG)
+  * 2x 15cm 
+  * 1x 25cm
 
-Live Cable 
-* 30cm 3x
+* AC Live Cables (Black 16AWG)
+  * 3x 25cm
+  * 1x 1 to 3 splitter 25cm (10cm + 3x 15cm)
 
 
 12V DC power output cables
