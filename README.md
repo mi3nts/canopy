@@ -74,8 +74,8 @@ Contains firmware for the Community Avian and AirQuality Network for Observing P
 
 * Miscellaneous Wires
     * Thin Silicone Wires
-        *1x 15cm Black (for Solid State Relay Ground)
-        *1x 25cm Black (for Arduino Nano 33 BLE Ground)
-        *1x 25cm Red (for Arduino Nano 33 BLE Power)
+        * 1x 15cm Black (for Solid State Relay Ground)
+        * 1x 25cm Black (for Arduino Nano 33 BLE Ground)
+        * 1x 25cm Red (for Arduino Nano 33 BLE Power)
   
   
