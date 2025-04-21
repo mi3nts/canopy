@@ -48,27 +48,34 @@ Contains firmware for the Community Avian and AirQuality Network for Observing P
 * 1x **Ozone Pump** (for Ozone Sensor)
 
 ### Wires and Cables
-* AC Earth Cables (Green 16AWG)
+* AC Earth Wires (Green 16AWG)
   * 2x 15cm 
   * 1x 25cm
   
-* AC Neurtal Cables (White 16AWG)
+* AC Neurtal Wires (White 16AWG)
   * 2x 15cm 
   * 1x 25cm
 
-* AC Live Cables (Black 16AWG)
+* AC Live Wires (Black 16AWG)
   * 3x 25cm
   * 1x 1 to 3 splitter 25cm (10cm + 3x 15cm)
 
-* DC Common Ground Cables (Blue 16AWG)
+* DC Common Ground Wires (Blue 16AWG)
   * 3x 15cm 
   * 1x 20cm
 
 * DC Power Cables
-  * 3x Coaxial 
+  * 3x Coaxial (for Odroid N2+ and Network Switch)
 
 * Ethernet Cables
   * 3x 30cm (for Odroid N2+ and ezOutlet5)
   * 1x 60cm (for Network Switch)
   * 1x 90cm (for LoRaWAN Gateway)
+
+* Miscellaneous Wires
+    * Thin Silicone Wires
+        *1x 15cm Black (for Solid State Relay Ground)
+        *1x 25cm Black (for Arduino Nano 33 BLE Ground)
+        *1x 25cm Red (for Arduino Nano 33 BLE Power)
+  
   
