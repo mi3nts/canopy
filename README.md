@@ -4,6 +4,9 @@ Contains firmware for the Community Avian and AirQuality Network for Observing P
 
 # Build 
 
+## Components
+
+
 Earth Cables (green)
 * 15cm 3x
 * 30 cm 1x
