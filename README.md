@@ -7,7 +7,7 @@ Contains firmware for the Community Avian and AirQuality Network for Observing P
 ## Components
 
 ### Compute Modules
-* 2x **Odroid N2+**[ ](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/)
+* 2x **Odroid N2+**[*](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/)
 * 1x **Arduino Nano 33 BLE**
 * 1x **XIAO ESP32 S3**
 
