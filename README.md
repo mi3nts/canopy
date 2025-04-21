@@ -8,6 +8,13 @@ Contains firmware for the Community Avian and AirQuality Network for Observing P
 
 ### Compute Modules
 * 2x **Odroid N2+** 
+* 1x **Arduino Nano 33 BLE**
+* 1x **XIAO ESP32 S3**
+
+### Sensor Modules
+* 1x **DFRobot SEN0463** (Radiation Sensor)
+* 1x **Ozone Sensor**
+* 
 
 
 Earth Cables (green)
