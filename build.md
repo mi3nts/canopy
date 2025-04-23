@@ -41,8 +41,8 @@
 |                   |                           | 16AWG | 25cm               | ⚪ White |    1     |    ✅    |    ✅    |    ✅    |
 |                   | **AC Live Wires**         | 16AWG | 25cm               | ⚫ Black |    3     |    ✅    |    ✅    |    ✅    |
 |                   | **1 to 3 splitter 25cm**  | 16AWG | (10cm + 3x 15cm)   | ⚫ Black |    1     |    ✅    |    ✅    |    ✅    |
-|                   | **DC Common Ground Wires**| 16AWG | 15cm               | 🔵 Blue |    3     |    ✅    |    ✅    |    ✅    |
-|                   |                           | 16AWG | 20cm               | 🔵 Blue |    1     |    ✅    |    ✅    |    ✅    |
+|                   | **DC Common Ground Wires**| 16AWG | 15cm               | 🔵  Blue |    3     |    ✅    |    ✅    |    ✅    |
+|                   |                           | 16AWG | 20cm               | 🔵  Blue |    1     |    ✅    |    ✅    |    ✅    |
 |                   | **DC Power Cables**       | - | Coaxial            |   -   |    3     |    ✅    |    ✅    |    ✅    |
 |                   | **Ethernet Cables**       | CAT6 | 30cm               |   -   |    3     |    ✅    |    ✅    |    ✅    |
 |                   |                           | CAT6 | 60cm               |   -   |    1     |    ✅    |    ✅    |    ✅    |
