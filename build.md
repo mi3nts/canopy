@@ -3,7 +3,7 @@
 
 ## Components
 | Type | Component Name | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
-| :-------- | :-------- | :--------: | :--------: | :--------: | :--------: |
+| :--------: | :-------- | :--------: | :--------: | :--------: | :--------: |
 | **Compute Modules** | [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | 2 | ✅ | ✅ | ✅ |
 |  | [**Arduino Nano 33 BLE**](https://store.arduino.cc/products/nano-33-ble-sense-rev2) | 1 | ✅ | ✅ | ✅ |
 |  | [**XIAO ESP32 S3**](https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html) | 1 | ✅ | ✅ | ✅ |
@@ -16,6 +16,8 @@
 |  | [**Solid State Relay 4 Channel**](https://www.seeedstudio.com/Grove-4-Channel-Solid-State-Relay.html) | 1 | ✅ | ✅ | ⏳ |
 |  | [**ezOutlet5**](https://www.proxicast.com/shopping/ezoutlet5.html) | 1 | ✅ | ✅ | ✅ |
 | **Glands** | [**Power Gland**](https://www.digikey.com/en/products/detail/adam-tech/PG-2-3/10000000) | 1 | ✅ | ✅ | ✅ |
+|  | [**Ethernet Gland**](https://www.digikey.com/en/products/detail/conxall-switchcraft/dcp-rj6st-f/3909464) | 1 | ✅ | ✅ | ✅ |
+| **CNC & 3D Printed Parts** | **Acrylic Base** | 1 | ✅ | ✅ | ✅ |
 
 
 ### Compute Modules
