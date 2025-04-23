@@ -3,7 +3,7 @@
 
 ## Components
 | Type | Component Name | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
-| :--------: | :-------- | :--------: | :--------: | :--------: | :--------: |
+| :-------- | :-------- | :--------: | :--------: | :--------: | :--------: |
 | **Compute Modules** | [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | 2 | ✅ | ✅ | ✅ |
 |  | [**Arduino Nano 33 BLE**](https://store.arduino.cc/products/nano-33-ble-sense-rev2) | 1 | ✅ | ✅ | ✅ |
 |  | [**XIAO ESP32 S3**](https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html) | 1 | ✅ | ✅ | ✅ |
