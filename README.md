@@ -9,19 +9,20 @@ This system design leverages an **Odroid** as a powerful Edge IoT node, integrat
 ---
 
 ## 🚀 Components
-- **Local Grafana**: Provides edge visualization for real-time monitoring without relying on cloud access.
+
 - **Git-Managed Dockerized Sensor Readers**: Python containers pulled from Git, reading sensors and publishing data via MQTT.
 - **Git-Managed Local Services**:
   - **Mosquitto (MQTT Broker)**: Manages local messaging.
   - **Node-RED**: Handles data routing, automation, and local storage to InfluxDB.
   - **InfluxDB (Local)**: Buffers time-series data at the edge.
   - **Telegraf**: Continuously syncs local InfluxDB data to Cloud InfluxDB.
+  - **Grafana**: Provides edge visualization for real-time monitoring without relying on cloud access.
 - **Cloud Backend**: Centralized Node-RED, InfluxDB, and Grafana for real-time processing, long-term storage, and visualization.
 
 ---
 
 ## 🌐 Data Flow
-1. Sensors connected to Odroid are read by Dockerized Python sensor readers deployed from Git.
+1. Sensors connected to Odroid are read by Dockerized Python sensor readers deployed from Git - The current repo.
 2. Sensor data is published to:
    - **Local MQTT Broker** for edge processing.
    - **Cloud MQTT Broker** for real-time cloud ingestion.
@@ -51,10 +52,3 @@ This system design leverages an **Odroid** as a powerful Edge IoT node, integrat
 7. Access cloud Node-RED and Grafana for real-time monitoring and dashboards.
 
 
-
-
-## Sensors Installed 
-- IPS7100
-- BME280
-- COZIR
-- 2BL Ozone Module
