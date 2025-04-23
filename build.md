@@ -34,8 +34,8 @@
 
 ## Wires and Cables
 
-| Type               | Component Name       | Length                                | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
-| :----------------- | :------------------- | :------------------------------------ | :------: | :------: | :------: | :------: |
+| Type | Component Name | Length | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
+| :----------------- | :------------------- | :------------------------------------: | :------: | :------: | :------: | :------: |
 | **Wires and Cables** | **AC Earth Wires**  | 15cm                                  |    2     |    ✅    |    ✅    |    ✅    |
 |                    |                     | 25cm                                  |    1     |    ✅    |    ✅    |    ✅    |
 |                    | **AC Neutral Wires** | 15cm                                  |    2     |    ✅    |    ✅    |    ✅    |
