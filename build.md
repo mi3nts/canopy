@@ -40,6 +40,7 @@
 |  | **DC Common Ground Wires** (Blue 16AWG) | 4 | ✅ | ✅ | ✅ |
 |  | **DC Power Cables** | 3 | ✅ | ✅ | ✅ |
 |  | **Ethernet Cables** | 5 | ✅ | ✅ | ✅ |
+|  | **Miscellaneous Wires** | 3 | ✅ | ✅ | ✅ |
 
 
 
