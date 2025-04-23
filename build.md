@@ -27,6 +27,20 @@
 |  | **5V Power Supply Base** | 2 | ✅ | ✅ | ✅ |
 |  | **12V Power Supply Base** | 3 | ✅ | ✅ | ✅ |
 |  | **Solid State Relay Base** | 1 | ✅ | ✅ | ❌ |
+|  | **Lightning Arrester Enclosure** | 1 | ✅ | ✅ | ✅ |
+| **Miscellaneous** | [**Lightning Arrestor**](https://www.waveform.com/products/sma-lightning-arrestor?srsltid=AfmBOoqPGCRT3DLUS-jV6BZXDiPfUxquFSx-ob9_FARVyji8LdAvkDix) | 1 | ✅ | ✅ | ✅ |
+|  | [**GPS Module**](https://www.dfrobot.com/product-2212.html?srsltid=AfmBOopC3ACS4fteI6YBTIDWjCWQ0hfJIGSxyhN_UdGwQtrTQll43zKa) | 2 | ✅ | ✅ | ✅ |
+|  | [**Ozone Pump**](https://knf.com/en/us/solutions/pumps/series/diaphragm-gas-pump-nmp-830) | 1 | ✅ | ✅ | ✅ |
+
+| Type | Component Name | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
+| :-------- | :-------- | :--------: | :--------: | :--------: | :--------: |
+| **Wires and Cables** | **AC Earth Wires** (Green 16AWG) | 3 | ✅ | ✅ | ✅ |
+|  | **AC Neutral Wires** (White 16AWG) | 3 | ✅ | ✅ | ✅ |
+|  | **AC Live Wires** (Black 16AWG) | 4 | ✅ | ✅ | ✅ |
+|  | **DC Common Ground Wires** (Blue 16AWG) | 4 | ✅ | ✅ | ✅ |
+|  | **DC Power Cables** | 3 | ✅ | ✅ | ✅ |
+|  | **Ethernet Cables** | 5 | ✅ | ✅ | ✅ |
+
 
 
 ### Compute Modules
