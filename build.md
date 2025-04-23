@@ -32,58 +32,25 @@
 |  | [**GPS Module**](https://www.dfrobot.com/product-2212.html?srsltid=AfmBOopC3ACS4fteI6YBTIDWjCWQ0hfJIGSxyhN_UdGwQtrTQll43zKa) | 2 | ✅ | ✅ | ✅ |
 |  | [**Ozone Pump**](https://knf.com/en/us/solutions/pumps/series/diaphragm-gas-pump-nmp-830) | 1 | ✅ | ✅ | ✅ |
 
-| Type | Component Name | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
+| Type | Component Name | Length | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
 | :-------- | :-------- | :--------: | :--------: | :--------: | :--------: |
-| **Wires and Cables** | **AC Earth Wires** (Green 16AWG) | 3 | ✅ | ✅ | ✅ |
-|  | **AC Neutral Wires** (White 16AWG) | 3 | ✅ | ✅ | ✅ |
-|  | **AC Live Wires** (Black 16AWG) | 4 | ✅ | ✅ | ✅ |
-|  | **DC Common Ground Wires** (Blue 16AWG) | 4 | ✅ | ✅ | ✅ |
-|  | **DC Power Cables** | 3 | ✅ | ✅ | ✅ |
-|  | **Ethernet Cables** | 5 | ✅ | ✅ | ✅ |
-|  | **Miscellaneous Wires** | 3 | ✅ | ✅ | ✅ |
+| **Wires and Cables** | **AC Earth Wires** | 15cm | 2 | ✅ | ✅ | ✅ |
+|  |  | 25cm | 1 | ✅ | ✅ | ✅ |
+|  | **AC Neutral Wires** | 15cm | 2 | ✅ | ✅ | ✅ |
+|  |  | 25cm | 1 | ✅ | ✅ | ✅ |
+|  | **AC Live Wires** | 25cm | 3 | ✅ | ✅ | ✅ |
+|  |  | 1 to 3 splitter 25cm (10cm + 3x 15cm) | 1 | ✅ | ✅ | ✅ |
+|  | **DC Common Ground Wires** | 15cm | 3 | ✅ | ✅ | ✅ |
+|  |  | 20cm | 1 | ✅ | ✅ | ✅ |
+|  | **DC Power Cables** | Coaxial | 3 | ✅ | ✅ | ✅ |
+|  | **Ethernet Cables** | 30cm | 3 | ✅ | ✅ | ✅ |
+|  |  | 60cm | 1 | ✅ | ✅ | ✅ |
+|  |  | 90cm | 1 | ✅ | ✅ | ✅ |
+| **Miscellaneous Wires** | **Thin Silicone Wires** | 15cm | 1 | ✅ | ✅ | ✅ |
 
 
 
-### Compute Modules
-* 2x [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/)
-* 1x **Arduino Nano 33 BLE**
-* 1x **XIAO ESP32 S3** 
 
-### Sensor Modules
-* 1x **DFRobot SEN0463** (Radiation Sensor)
-* 1x **Ozone Sensor**
-
-### Network Modules
-* 1x **Network Switch** (4 port)
-* 1x **LoRaWAN Gateway**
-
-### Power Modules
-* 3x **12V 3A AC to DC Power Supply**
-* 2x **5V 5A AC to DC Power Supply** 
-* 1x **Solid State Relay 4 Channel**
-* 1x **ezOutlet5** (Smart Plug)
-
-### Glands
-* 1x **Power Gland** for AC Power Supply
-* 1x **Ethernet Gland** 
-
-### CNC & 3D Printed Parts
-* 1x **Base** (for whole system)
-* 2x **Bases** (for Odroid N2+)
-* 1x **GPS Enclosure** (for GPS module)
-* 1x **Sensor Enclosure** (for DFRobot SEN0463)
-* 1x **Base** (Ozone Pump)
-* 1x **Holder** (for LoRaWAN Gateway)
-* 1x **Holder** (for ezOutlet5)
-* 2x **Holder** (for 5V Power Supply)
-* 3x **Holder** (for 12V Power Supply)
-* 1x **Holder** (for Solid State Relay)
-* 1x **Holder** (for Lightning Arrester)
-
-### Miscellaneous
-* 1x **Lightning Arrester** (for LoRaWAN Gateway)
-* 2x **GPS Module**
-* 1x **Ozone Pump** (for Ozone Sensor)
 
 ### Wires and Cables
 * AC Earth Wires (Green 16AWG)
