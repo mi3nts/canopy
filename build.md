@@ -1,9 +1,9 @@
 # Build 
 
 ## Components
-| Header 1 | Header 2 | Header 3 | Header 4 | Header 5 | Header 6 | Header 7 |
-| -------- | -------- | -------- | -------- | -------- | -------- | -------- |
 | Type | Component Name | Quantity | Product Page | Canopy 1 | Canopy 2 | Canopy 3 |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| **Compute Modules** | Sensor Modules | Quantity | Product Page | Canopy 1 | Canopy 2 | Canopy 3 |
 
 ### Compute Modules
 * 2x [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/)
