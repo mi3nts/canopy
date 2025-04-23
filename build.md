@@ -33,20 +33,20 @@
 |  | [**Ozone Pump**](https://knf.com/en/us/solutions/pumps/series/diaphragm-gas-pump-nmp-830) | 1 | ✅ | ✅ | ✅ |
 
 ## Wires and Cables
-| Type              | Component Name            | Length             | Color | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
+| Type              | Component Name            | Wire type | Length             | Color | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
 |:----------|:---------------------------|:--------:|:-----:|:--------:|:--------:|:--------:|:--------:|
-| **Wires and Cables** | **AC Earth Wires**      | 15cm               | 🟢 Green |    2     |    ✅    |    ✅    |    ✅    |
-|                   |                           | 25cm               | 🟢 Green |    1     |    ✅    |    ✅    |    ✅    |
-|                   | **AC Neutral Wires**      | 15cm               | White |    2     |    ✅    |    ✅    |    ✅    |
-|                   |                           | 25cm               | White |    1     |    ✅    |    ✅    |    ✅    |
-|                   | **AC Live Wires**         | 25cm               |       |    3     |    ✅    |    ✅    |    ✅    |
-|                   | **1 to 3 splitter 25cm**  | (10cm + 3x 15cm)   |       |    1     |    ✅    |    ✅    |    ✅    |
-|                   | **DC Common Ground Wires**| 15cm               |       |    3     |    ✅    |    ✅    |    ✅    |
-|                   |                           | 20cm               |       |    1     |    ✅    |    ✅    |    ✅    |
-|                   | **DC Power Cables**       | Coaxial            |       |    3     |    ✅    |    ✅    |    ✅    |
-|                   | **Ethernet Cables**       | 30cm               |       |    3     |    ✅    |    ✅    |    ✅    |
-|                   |                           | 60cm               |       |    1     |    ✅    |    ✅    |    ✅    |
-|                   |                           | 90cm               |       |    1     |    ✅    |    ✅    |    ✅    |
+| **Wires and Cables** | **AC Earth Wires**      | 16AWG | 15cm               | 🟢 Green |    2     |    ✅    |    ✅    |    ✅    |
+|                   |                           | 16AWG | 25cm               | 🟢 Green |    1     |    ✅    |    ✅    |    ✅    |
+|                   | **AC Neutral Wires**      | 16AWG | 15cm               | ⚪ White |    2     |    ✅    |    ✅    |    ✅    |
+|                   |                           | 16AWG | 25cm               | ⚪ White |    1     |    ✅    |    ✅    |    ✅    |
+|                   | **AC Live Wires**         | 16AWG | 25cm               | ⚫ Black |    3     |    ✅    |    ✅    |    ✅    |
+|                   | **1 to 3 splitter 25cm**  | 16AWG | (10cm + 3x 15cm)   | ⚫ Black |    1     |    ✅    |    ✅    |    ✅    |
+|                   | **DC Common Ground Wires**| 16AWG | 15cm               | 🔵 Blue |    3     |    ✅    |    ✅    |    ✅    |
+|                   |                           | 16AWG | 20cm               | 🔵 Blue |    1     |    ✅    |    ✅    |    ✅    |
+|                   | **DC Power Cables**       | - | Coaxial            |   -   |    3     |    ✅    |    ✅    |    ✅    |
+|                   | **Ethernet Cables**       | CAT6 | 30cm               |   -   |    3     |    ✅    |    ✅    |    ✅    |
+|                   |                           | CAT6 | 60cm               |   -   |    1     |    ✅    |    ✅    |    ✅    |
+|                   |                           | CAT6 | 90cm               |   -   |    1     |    ✅    |    ✅    |    ✅    |
 
 
 
