@@ -35,10 +35,10 @@
 ## Wires and Cables
 | Type              | Component Name            | Length             | Color | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
 |:----------|:---------------------------|:--------:|:-----:|:--------:|:--------:|:--------:|:--------:|
-| **Wires and Cables** | **AC Earth Wires**      | 15cm               |       |    2     |    ✅    |    ✅    |    ✅    |
-|                   |                           | 25cm               |       |    1     |    ✅    |    ✅    |    ✅    |
-|                   | **AC Neutral Wires**      | 15cm               |       |    2     |    ✅    |    ✅    |    ✅    |
-|                   |                           | 25cm               |       |    1     |    ✅    |    ✅    |    ✅    |
+| **Wires and Cables** | **AC Earth Wires**      | 15cm               | <span style="color:green">Green</span> |    2     |    ✅    |    ✅    |    ✅    |
+|                   |                           | 25cm               | <span style="color:green">Green</span> |    1     |    ✅    |    ✅    |    ✅    |
+|                   | **AC Neutral Wires**      | 15cm               | White |    2     |    ✅    |    ✅    |    ✅    |
+|                   |                           | 25cm               | White |    1     |    ✅    |    ✅    |    ✅    |
 |                   | **AC Live Wires**         | 25cm               |       |    3     |    ✅    |    ✅    |    ✅    |
 |                   | **1 to 3 splitter 25cm**  | (10cm + 3x 15cm)   |       |    1     |    ✅    |    ✅    |    ✅    |
 |                   | **DC Common Ground Wires**| 15cm               |       |    3     |    ✅    |    ✅    |    ✅    |
