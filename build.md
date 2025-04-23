@@ -32,6 +32,7 @@
 |  | [**GPS Module**](https://www.dfrobot.com/product-2212.html?srsltid=AfmBOopC3ACS4fteI6YBTIDWjCWQ0hfJIGSxyhN_UdGwQtrTQll43zKa) | 2 | ✅ | ✅ | ✅ |
 |  | [**Ozone Pump**](https://knf.com/en/us/solutions/pumps/series/diaphragm-gas-pump-nmp-830) | 1 | ✅ | ✅ | ✅ |
 
+## Wires and Cables
 
 | Type | Component Name | Length | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
 | :-------- | :-------- | :--------: | :--------: | :--------: | :--------: |
