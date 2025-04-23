@@ -24,6 +24,9 @@
   
   <img src="res/componentsImages/ozonesensor.jpg" alt="Ozone Sensor" width="300"/>
 
+- **GPS Module** 
+  
+  <img src="res/componentsImages/gpsmodule.jpg" alt="GPS Module" width="300"/>
 
   
 
