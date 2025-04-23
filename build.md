@@ -6,8 +6,8 @@
 | :-------- | :-------- | :--------: | :--------: | :--------: | :--------: |
 | **Compute Modules** | [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | 2 | ✅ | ✅ | ✅ |
 |  | [**Arduino Nano 33 BLE**](https://store.arduino.cc/products/nano-33-ble-sense-rev2) | 1 | ✅ | ✅ | ✅ |
-|  | [**XIAO ESP32 S3**](https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html) | 1 | ✅ | ✅ | ⏳ |
-| **Sensor Modules** | [**DFRobot SEN0463**](https://www.dfrobot.com/product-2547.html) | 1 | ✅ | ✅ | ✅ |
+|  | [**XIAO ESP32 S3**](https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html) | 1 | ✅ | ✅ | ❌ |
+| **Sensor Modules** | [**DFRobot SEN0463**](https://www.dfrobot.com/product-2547.html) | 1 | ✅ | ✅ | ❌ |
 |  | [**Ozone Sensor**](https://2btech.io/items/industrial-ozone-monitors/model-108-l-ozone-monitor/) | 1 | ✅ | ✅ | ✅ |
 | **Network Modules** | [**Network Switch** (4 port)](https://wiwav.com/products/wdh-5et-dc) | 1 | ✅ | ✅ | ✅ |
 |  | [**LoRaWAN Gateway**](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html) | 1 | ✅ | ✅ | ✅ |
@@ -43,9 +43,9 @@
 |                   | **1 to 3 splitter 25cm**  | 16AWG | (10cm + 3x 15cm)   | ⚫ Black |    1     |    ✅    |    ✅    |    ✅    |
 |                   | **DC Common Ground Wires**| 16AWG | 15cm               | 🔵  Blue |    3     |    ✅    |    ✅    |    ✅    |
 |                   |                           | 16AWG | 20cm               | 1 |    1     |    ✅    |    ✅    |    ✅    |
-|                   | **Solid State Relay Ground**| Thin Silicone Wires | 15cm               | ⚫ Black |    1     |    ✅    |    ✅    |    ✅    |
-|                   | **Arduino Nano 33 BLE Ground** | Thin Silicone Wires | 25cm | ⚫ Black               | 1 |    ✅    |    ✅    |    ✅    |
-|                   | **Arduino Nano 33 BLE Power** | Thin Silicone Wires | 25cm | 🔴 Red              | 1 |    ✅    |    ✅    |    ✅    |
+|                   | **Solid State Relay Ground**| Thin Silicone Wires | 15cm               | ⚫ Black |    1     |    ✅    |    ✅    |    ❌    |
+|                   | **Arduino Nano 33 BLE Ground** | Thin Silicone Wires | 25cm | ⚫ Black               | 1 |    ✅    |    ✅    |    ❌    |
+|                   | **Arduino Nano 33 BLE Power** | Thin Silicone Wires | 25cm | 🔴 Red              | 1 |    ✅    |    ✅    |    ❌    |
 |                   | **DC Power Cables**       | - | Coaxial            |   -   |    3     |    ✅    |    ✅    |    ✅    |
 |                   | **Ethernet Cables**       | CAT6 | 30cm               |   -   |    3     |    ✅    |    ✅    |    ✅    |
 |                   |                           | CAT6 | 60cm               |   -   |    1     |    ✅    |    ✅    |    ✅    |
