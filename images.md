@@ -1,4 +1,4 @@
 ### Odroid N2+
 
-![Odroid N2+](component%20image/odroid_n2_plus.jpeg)
+![Odroid N2+](res/componentsImages/odroidn2plusA.jpg)
 
