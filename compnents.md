@@ -38,6 +38,19 @@
   
   <img src="res/componentsImages/lorawanGateway.jpg" alt="LoRaWAN Gateway" width="300"/>
 
+## Power Modules
+- **12V 3A AC to DC Power Supply** 
+  
+  <img src="res/componentsImages/12v3apowersupply.jpg" alt="12V 3A AC to DC Power Supply" width="300"/>
+
+- **5V 5A AC to DC Power Supply** 
+  
+  <img src="res/componentsImages/5v5apowersupply.jpg" alt="5V 5A AC to DC Power Supply" width="300"/>
+
+- **Solid State Relay 4 Channel** 
+  
+  <img src="res/componentsImages/solidStateRelay.jpg" alt="Solid State Relay 4 Channel" width="300"/>
+
 
 
 
