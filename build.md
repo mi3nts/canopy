@@ -18,6 +18,15 @@
 | **Glands** | [**Power Gland**](https://www.digikey.com/en/products/detail/adam-tech/PG-2-3/10000000) | 1 | ✅ | ✅ | ✅ |
 |  | [**Ethernet Gland**](https://www.digikey.com/en/products/detail/conxall-switchcraft/dcp-rj6st-f/3909464) | 1 | ✅ | ✅ | ✅ |
 | **CNC & 3D Printed Parts** | **Acrylic Base** | 1 | ✅ | ✅ | ✅ |
+|  | **Odroid N2+ Bases** | 2 | ✅ | ✅ | ✅ |
+|  | **GPS Enclosure** | 1 | ✅ | ✅ | ✅ |
+|  | **Geiger(SEN0463) Enclosure** | 1 | ✅ | ✅ | ⏳ |
+|  | **Ozone Pump Base** | 1 | ✅ | ✅ | ✅ |
+|  | **LoRaWAN Gateway Holder** | 1 | ✅ | ✅ | ✅ |
+|  | **ezOutlet5 Holder** | 1 | ✅ | ✅ | ✅ |
+|  | **5V Power Supply Base** | 2 | ✅ | ✅ | ✅ |
+|  | **12V Power Supply Base** | 3 | ✅ | ✅ | ✅ |
+|  | **Solid State Relay Base** | 1 | ✅ | ✅ | ❌ |
 
 
 ### Compute Modules
