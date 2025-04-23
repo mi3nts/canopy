@@ -6,7 +6,7 @@
 | :-------- | :-------- | :--------: | :--------: | :--------: | :--------: |
 | **Compute Modules** | [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | 2 | ✅ | ✅ | ✅ |
 |  | [**Arduino Nano 33 BLE**](https://store.arduino.cc/products/nano-33-ble-sense-rev2) | 1 | ✅ | ✅ | ✅ |
-|  | [**XIAO ESP32 S3**](https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html) | 1 | ✅ | ✅ | ✅ |
+|  | [**XIAO ESP32 S3**](https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html) | 1 | ✅ | ✅ | ❌ |
 | **Sensor Modules** | [**DFRobot SEN0463**](https://www.dfrobot.com/product-2547.html) | 1 | ✅ | ✅ | ✅ |
 |  | [**Ozone Sensor**](https://2btech.io/items/industrial-ozone-monitors/model-108-l-ozone-monitor/) | 1 | ✅ | ✅ | ✅ |
 | **Network Modules** | [**Network Switch** (4 port)](https://wiwav.com/products/wdh-5et-dc) | 1 | ✅ | ✅ | ✅ |
