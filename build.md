@@ -13,7 +13,7 @@
 |  | [**LoRaWAN Gateway**](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html) | 1 | ✅ | ✅ | ✅ |
 | **Power Modules** | [**12V 3A AC to DC Power Supply**](https://www.digikey.com/en/products/detail/cui-inc/vgs-35c-12/13538494) | 3 | ✅ | ✅ | ✅ |
 |  | [**5V 5A AC to DC Power Supply**](https://www.digikey.com/en/products/detail/cui-inc/VGS-25W-5/13981829) | 2 | ✅ | ✅ | ✅ |
-|  | [**Solid State Relay 4 Channel**](https://www.seeedstudio.com/Grove-4-Channel-Solid-State-Relay.html) | 1 | ✅ | ✅ | ✅ |
+|  | [**Solid State Relay 4 Channel**](https://www.seeedstudio.com/Grove-4-Channel-Solid-State-Relay.html) | 1 | ✅ | ✅ | ⏳ |
 |  | [**ezOutlet5**](https://www.proxicast.com/shopping/ezoutlet5.html) | 1 | ✅ | ✅ | ✅ |
 | **Glands** | [**Power Gland**](https://www.digikey.com/en/products/detail/adam-tech/PG-2-3/10000000) | 1 | ✅ | ✅ | ✅ |
 
