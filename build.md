@@ -3,12 +3,12 @@
 ## Components
 | Type | Component Name | Quantity | Product Page | Canopy 1 | Canopy 2 | Canopy 3 |
 | :-------- | :-------- | :--------: | :--------: | :--------: | :--------: | :--------: |
-| **Compute Modules** | **Odroid N2+** | 2 | [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | - [x] | [x] | [x] |
+| **Compute Modules** | **Odroid N2+** | 2 | [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | ✅ | ✅ | ✅ |
 
 ### Compute Modules
 * 2x [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/)
 * 1x **Arduino Nano 33 BLE**
-* 1x **XIAO ESP32 S3** - [x] Task 1 completed
+* 1x **XIAO ESP32 S3** 
 
 ### Sensor Modules
 * 1x **DFRobot SEN0463** (Radiation Sensor)
