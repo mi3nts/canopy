@@ -5,7 +5,7 @@
 | Type | Component Name | Quantity | Canopy 1 | Canopy 2 | Canopy 3 |
 | :-------- | :-------- | :--------: | :--------: | :--------: | :--------: |
 | **Compute Modules** | [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | 2 | ✅ | ✅ | ✅ |
-|  | [**Arduino Nano 33 BLE**](https://store.arduino.cc/products/nano-33-ble-sense-rev2) | 1 | ✅ | ✅ | ✅ |
+|  | [**Arduino Nano 33 BLE**](https://store.arduino.cc/products/nano-33-ble-sense-rev2) | 1 | ✅ | ✅ | ❌ |
 |  | [**XIAO ESP32 S3**](https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html) | 1 | ✅ | ✅ | ❌ |
 | **Sensor Modules** | [**DFRobot SEN0463**](https://www.dfrobot.com/product-2547.html) | 1 | ✅ | ✅ | ❌ |
 |  | [**Ozone Sensor**](https://2btech.io/items/industrial-ozone-monitors/model-108-l-ozone-monitor/) | 1 | ✅ | ✅ | ✅ |
@@ -53,39 +53,4 @@
 
 
 
-
-
-
-
-### Wires and Cables
-* AC Earth Wires (Green 16AWG)
-  * 2x 15cm 
-  * 1x 25cm
-  
-* AC Neurtal Wires (White 16AWG)
-  * 2x 15cm 
-  * 1x 25cm
-
-* AC Live Wires (Black 16AWG)
-  * 3x 25cm
-  * 1x 1 to 3 splitter 25cm (10cm + 3x 15cm)
-
-* DC Common Ground Wires (Blue 16AWG)
-  * 3x 15cm 
-  * 1x 20cm
-
-* DC Power Cables
-  * 3x Coaxial (for Odroid N2+ and Network Switch)
-
-* Ethernet Cables
-  * 3x 30cm (for Odroid N2+ and ezOutlet5)
-  * 1x 60cm (for Network Switch)
-  * 1x 90cm (for LoRaWAN Gateway)
-
-* Miscellaneous Wires
-    * Thin Silicone Wires
-        * Black: 1x 15cm  (for Solid State Relay Ground)
-        * Black: 1x 25cm (for Arduino Nano 33 BLE Ground)
-        * Red: 1x 25cm  (for Arduino Nano 33 BLE Power)
-  
   
