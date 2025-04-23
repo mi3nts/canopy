@@ -7,6 +7,7 @@
 | **Compute Modules** | **Odroid N2+** | 2 | [**Click here**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | ✅ | ✅ | ✅ |
 |  | **Arduino Nano 33 BLE** | 1 | [**Click here**](https://store.arduino.cc/products/nano-33-ble-sense-rev2) | ✅ | ✅ | ✅ |
 |  | **XIAO ESP32 S3** | 1 | [**Click here**](https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html) | ✅ | ✅ | ✅ |
+|  |  |  |  |  |  |  |
 | **Sensor Modules** | **DFRobot SEN0463** | 1 | [**Click here**](https://www.dfrobot.com/product-2547.html) | ✅ | ✅ | ✅ |
 
 ### Compute Modules
