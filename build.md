@@ -4,7 +4,7 @@
 ## Components
 | Type | Component Name | Quantity | Product Page | Canopy 1 | Canopy 2 | Canopy 3 |
 | :-------- | :-------- | :--------: | :--------: | :--------: | :--------: | :--------: |
-| **Compute Modules** | **Odroid N2+** | 2 | [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | ✅ | ✅ | ✅ |
+| **Compute Modules** | **Odroid N2+** | 2 | [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | ✅ | ✅ |  |
 
 ### Compute Modules
 * 2x [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/)
