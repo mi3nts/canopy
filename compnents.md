@@ -28,7 +28,17 @@
   
   <img src="res/componentsImages/gpsmodule.jpg" alt="GPS Module" width="300"/>
 
+ ## Network Modules
+
+- **Network Switch** (4 port) 
   
+  <img src="res/componentsImages/networkSwitch.jpg" alt="Network Switch" width="300"/>
+
+- **LoRaWAN Gateway** 
+  
+  <img src="res/componentsImages/lorawanGateway.jpg" alt="LoRaWAN Gateway" width="300"/>
+
+
 
 
 
