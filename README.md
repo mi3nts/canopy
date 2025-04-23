@@ -3,12 +3,12 @@ Contains firmware for the Community Avian and AirQuality Network for Observing P
 
 ## Suggested Framework 
 
-## 📋 Summary
+### 📋 Summary
 This system design leverages an **Odroid** as a powerful Edge IoT node, integrating local data collection, processing, and resilient cloud synchronization. All local services and custom sensor readers are managed via **Git repositories** for version control and streamlined deployments. The system ensures continuous operation during internet outages by storing data locally and syncing to the cloud when connectivity is restored, while also publishing live data to the cloud via MQTT.
 
 ---
 
-## 🚀 Components
+### 🚀 Components
 
 - **Git-Managed Dockerized Sensor Readers**: Python containers pulled from Git, reading sensors and publishing data via MQTT.
 - **Git-Managed Local Services**:
@@ -21,7 +21,7 @@ This system design leverages an **Odroid** as a powerful Edge IoT node, integrat
 
 ---
 
-## 🌐 Data Flow
+### 🌐 Data Flow
 1. Sensors connected to Odroid are read by Dockerized Python sensor readers deployed from Git - The current repo.
 2. Sensor data is published to:
    - **Local MQTT Broker** for edge processing.
@@ -32,7 +32,7 @@ This system design leverages an **Odroid** as a powerful Edge IoT node, integrat
 
 ---
 
-## 🛡️ Key Features
+### 🛡️ Key Features
 - **Git-Managed Deployments**: Version control for all services and sensor readers.
 - **Offline Resilience**: Full functionality without internet.
 - **Live Data Streaming**: Real-time data published to cloud via MQTT.
