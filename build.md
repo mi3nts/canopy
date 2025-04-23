@@ -2,18 +2,25 @@
 # Build 
 
 ## Components
-| Type | Component Name | Quantity | Product Page | Canopy 1 | Canopy 2 | Canopy 3 |
-| :-------- | :-------- | :--------: | :--------: | :--------: | :--------: | :--------: |
-| **Compute Modules** | **Odroid N2+** | 2 | [**Click here**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | ✅ | ✅ | ✅ |
-|  | **Arduino Nano 33 BLE** | 1 | [**Click here**](https://store.arduino.cc/products/nano-33-ble-sense-rev2) | ✅ | ✅ | ✅ |
-|  | **XIAO ESP32 S3** | 1 | [**Click here**](https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html) | ✅ | ✅ | ✅ |
-| **Sensor Modules** | **DFRobot SEN0463** | 1 | [**Click here**](https://www.dfrobot.com/product-2547.html) | ✅ | ✅ | ✅ |
-|  | **Ozone Sensor** | 1 | [**Click here**](https://2btech.io/items/industrial-ozone-monitors/model-108-l-ozone-monitor/) | ✅ | ✅ | ✅ |
-| **Network Modules** | **Network Switch** (4 port) | 1 | [**Click here**](https://wiwav.com/products/wdh-5et-dc) | ✅ | ✅ | ✅ |
-|  | **LoRaWAN Gateway** | 1 | [**Click here**](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html) | ✅ | ✅ | ✅ |
-| **Power Modules** | **12V 3A AC to DC Power Supply** | 3 | [**Click here**](https://www.digikey.com/en/products/detail/cui-inc/vgs-35c-12/13538494) | ✅ | ✅ | ✅ |
-|  | **5V 5A AC to DC Power Supply** | 2 | [**Click here**](https://www.digikey.com/en/products/detail/cui-inc/VGS-25W-5/13981829) | ✅ | ✅ | ✅ |
-|  | **Solid State Relay 4 Channel** | 1 | [**Click here**](https://www.seeedstudio.com/Grove-4-Channel-Solid-State-Relay.html) | ✅ | ✅ | ✅ |
+| Type | Component Name | Canopy 1 | Canopy 2 | Canopy 3 |
+| :-------- | :-------- | :--------: | :--------: | :--------: |
+| **Compute Modules** | [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/) | ✅ | ✅ | ✅ |
+|  | [**Arduino Nano 33 BLE**](https://store.arduino.cc/products/nano-33-ble-sense-rev2) | ✅ | ✅ | ✅ |
+|  | [**XIAO ESP32 S3**](https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html) | ✅ | ✅ | ✅ |
+
+| **Sensor Modules** | [**DFRobot SEN0463**](https://www.dfrobot.com/product-2547.html) | ✅ | ✅ | ✅ |
+|  | [**Ozone Sensor**](https://2btech.io/items/industrial-ozone-monitors/model-108-l-ozone-monitor/) | ✅ | ✅ | ✅ |
+
+| **Network Modules** | [**Network Switch** (4 port)](https://wiwav.com/products/wdh-5et-dc) | ✅ | ✅ | ✅ |
+|  | [**LoRaWAN Gateway**](https://www.dragino.com/products/lora-lorawan-gateway/item/228-lps8v2.html) | ✅ | ✅ | ✅ |
+
+| **Power Modules** | [**12V 3A AC to DC Power Supply**](https://www.digikey.com/en/products/detail/cui-inc/vgs-35c-12/13538494) | ✅ | ✅ | ✅ |
+|  | [**5V 5A AC to DC Power Supply**](https://www.digikey.com/en/products/detail/cui-inc/VGS-25W-5/13981829) | ✅ | ✅ | ✅ |
+|  | [**Solid State Relay 4 Channel**](https://www.seeedstudio.com/Grove-4-Channel-Solid-State-Relay.html) | ✅ | ✅ | ✅ |
+|  | [**ezOutlet5**](https://www.proxicast.com/shopping/ezoutlet5.html) | ✅ | ✅ | ✅ |
+
+| **Glands** | [**Power Gland**](https://www.digikey.com/en/products/detail/adam-tech/PG-2-3/10000000) | ✅ | ✅ | ✅ |
+
 
 ### Compute Modules
 * 2x [**Odroid N2+**](https://www.hardkernel.com/shop/odroid-n2-with-4gbyte-ram-2/)
