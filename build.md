@@ -1,4 +1,4 @@
-- [x] Task 1 completed
+
 # Build 
 
 ## Components
