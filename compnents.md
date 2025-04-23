@@ -14,11 +14,15 @@
   
   <img src="res/componentsImages/arduinonano33ble.jpg" alt="Arduino Nano 33 BLE" width="300"/>
 
+## Sensor Modules
+
 - **DFRobot SEN0463** 
   
   <img src="res/componentsImages/dfrobotSEN0463.jpg" alt="DFRobot SEN0463" width="300"/> 
 
-
+- **Ozone Sensor** 
+  
+  <img src="res/componentsImages/ozonesensor.jpg" alt="Ozone Sensor" width="300"/>
 
 
   
