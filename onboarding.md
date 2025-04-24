@@ -24,16 +24,20 @@
    ```bash
    su teamlary
    ```
-6. Verify sudo privileges:
+6. Create default folders:
+   ```bash
+   xdg-user-dirs-update
+   ```   
+7. Verify sudo privileges:
    ```bash
    sudo whoami
    ```
    Output should be `root`.
-7. Change password:
+8. Change password:
    ```bash
    passwd
    ```
-8. Delete the default user:
+9. Delete the default user:
    ```bash
    sudo su
    userdel odroid
