@@ -14,13 +14,13 @@
 - Provide sudo priviledges to the user: 
 `sudo usermod -aG sudo teamlary`</br>
 - Once the user is created, switch to the newly created user
-`su - teamlary`
+`su teamlary`
 - Check for attained priveledges:
 ` sudo whoami`</br>
 The output should be `root`
 - change password
 ` passwd `
 - Delete the default user 
-  - ```sudo su -```
+  - ```sudo su```
   - ```userdel odroid```
   - ```userdel -r odroid```
