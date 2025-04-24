@@ -92,6 +92,7 @@ fi
 exit 0
 ```
 
-Whenever internet is available it will automatically  update the rtc using the system time 
+Whenever internet is available it will automatically update the rtc using the ntp time with the line `hwclock -w` given above. Likewise when there is no internet the rtc updates the system clock using `hwclock -s`.
+
 
 
