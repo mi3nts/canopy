@@ -62,17 +62,24 @@ As such you need to add
 # Check for internet connection
 if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
     echo "$(date): Internet detected - Syncing system clock..."
-    # Force immediate NTP sync (if ntpdate is installed)
-    ntpdate pool.ntp.org
+    sudo systemctl restart systemd-timesyncd
 
-    echo "$(date): Writing system time to RTC..."
-    hwclock -w
+    # Wait for NTP to sync
+    sleep 10
+
+    if timedatectl | grep -q "System clock synchronized: yes"; then
+        echo "$(date): Writing system time to RTC..."
+        hwclock -w
+    else
+        echo "$(date): System clock not synced yet. Skipping RTC update." >> /var/log/time_sync.log
+    fi
 else
     echo "No internet connection: Syncing system time from RTC..."
     hwclock -s
 fi
 ```
-to the file `/etc/rc.local`
+
+to the file `/etc/rc.local`. Using nano `sudo nano /etc/rc.local`
 
 The final file should look like the following 
 
@@ -87,12 +94,17 @@ fi
 # Check for internet connection
 if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
     echo "$(date): Internet detected - Syncing system clock..."
-    # Force immediate NTP sync (if ntpdate is installed)
-    ntpdate pool.ntp.org
+    sudo systemctl restart systemd-timesyncd
 
-    echo "$(date): Writing system time to RTC..."
-    hwclock -w
+    # Wait for NTP to sync
+    sleep 10
 
+    if timedatectl | grep -q "System clock synchronized: yes"; then
+        echo "$(date): Writing system time to RTC..."
+        hwclock -w
+    else
+        echo "$(date): System clock not synced yet. Skipping RTC update." >> /var/log/time_sync.log
+    fi
 else
     echo "No internet connection: Syncing system time from RTC..."
     hwclock -s
