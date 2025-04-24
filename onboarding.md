@@ -6,8 +6,9 @@
 
 ## User Accounts
 - Using a [UART Module](https://ameridroid.com/products/usb-uart-2-module-kit?pr_prod_strat=e5_desc&pr_rec_id=7b8882b26&pr_rec_pid=8013561757975&pr_ref_pid=69012291599&pr_seq=uniform) log into the odroid.
-- 
-On the command window type the following commands and ener data as par instructed:
+- The defaul credentials are given below
+  - UN: odroid
+  - PW: odroid
 - Create user:
 `sudo adduser teamlary` </br> 
 - Provide sudo priviledges to the user: 
@@ -19,12 +20,7 @@ On the command window type the following commands and ener data as par instructe
 The output should be `root`
 - change password
 ` passwd `
-
-
-## Deleting Users 
-
+- Delete the default user 
 ```sudo su -```
-
 ```userdel odroid```
-
 ```userdel -r odroid```
