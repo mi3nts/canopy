@@ -61,8 +61,12 @@ As such you need to add
 ```
 # Check for internet connection
 if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
+    echo "$(date): Internet detected - Syncing system clock..."
+    # Force immediate NTP sync (if ntpdate is installed)
+    ntpdate pool.ntp.org
+
+    echo "$(date): Writing system time to RTC..."
     hwclock -w
-    echo "Internet detected: NTP will handle time sync."
 else
     echo "No internet connection: Syncing system time from RTC..."
     hwclock -s
@@ -82,8 +86,13 @@ fi
 
 # Check for internet connection
 if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
+    echo "$(date): Internet detected - Syncing system clock..."
+    # Force immediate NTP sync (if ntpdate is installed)
+    ntpdate pool.ntp.org
+
+    echo "$(date): Writing system time to RTC..."
     hwclock -w
-    echo "Internet detected: NTP will handle time sync."
+
 else
     echo "No internet connection: Syncing system time from RTC..."
     hwclock -s
