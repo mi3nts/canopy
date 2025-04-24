@@ -21,6 +21,6 @@ The output should be `root`
 - change password
 ` passwd `
 - Delete the default user 
-```sudo su -```
-```userdel odroid```
-```userdel -r odroid```
+  - ```sudo su -```
+  - ```userdel odroid```
+  - ```userdel -r odroid```
