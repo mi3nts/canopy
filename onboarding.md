@@ -69,3 +69,25 @@ fi
 ```
 to the file `/etc/rc.local`
 
+The final file should look like the following 
+
+```
+#!/bin/bash
+
+# Run first boot script if exists
+if [ -f /aafirstboot ]; then 
+    /aafirstboot start
+fi
+
+# Check for internet connection
+if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
+    echo "Internet detected: NTP will handle time sync."
+else
+    echo "No internet connection: Syncing system time from RTC..."
+    hwclock -s
+fi
+
+exit 0
+```
+
+
