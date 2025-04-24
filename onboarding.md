@@ -81,6 +81,7 @@ fi
 
 # Check for internet connection
 if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
+    hwclock -w
     echo "Internet detected: NTP will handle time sync."
 else
     echo "No internet connection: Syncing system time from RTC..."
@@ -89,5 +90,7 @@ fi
 
 exit 0
 ```
+
+Whenever internet is available it will automatically be synced. 
 
 
