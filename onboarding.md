@@ -1,89 +1,82 @@
-# Onboarding
 
-## Getting the OS on the SD card  
-- Download the Odroid OS for the N2+ from this [link](https://wiki.odroid.com/odroid-n2/os_images/ubuntu/20220228)
-- Using [Etcher](https://etcher.balena.io/) get the image into an SD card.
+# Onboarding Guide
 
-## User Accounts
-- Using a [UART Module](https://ameridroid.com/products/usb-uart-2-module-kit?pr_prod_strat=e5_desc&pr_rec_id=7b8882b26&pr_rec_pid=8013561757975&pr_ref_pid=69012291599&pr_seq=uniform) log into the odroid.
-- The defaul credentials are given below
-  - UN: odroid
-  - PW: odroid
-- Create user:
-`sudo adduser teamlary` </br> 
-- Provide sudo priviledges to the user: 
-`sudo usermod -aG sudo teamlary`</br>
-- Once the user is created, switch to the newly created user
-`su teamlary`
-- Check for attained priveledges:
-` sudo whoami`</br>
-The output should be `root`
-- change password
-` passwd `
-- Delete the default user 
-  - ```sudo su```
-  - ```userdel odroid```
-  - ```userdel -r odroid```
+## 📥 Getting the OS on the SD Card  
+1. Download the Odroid OS for the N2+ from this [link](https://wiki.odroid.com/odroid-n2/os_images/ubuntu/20220228).  
+2. Use [Etcher](https://etcher.balena.io/) to flash the image onto an SD card.
 
-## Time Zone Set 
+---
 
-An RTC should be stup for this section. The instructions given below should be followed on all linux driven mints nodes:
+## 👤 User Accounts Setup
+1. Connect to the Odroid using a [UART Module](https://ameridroid.com/products/usb-uart-2-module-kit?pr_prod_strat=e5_desc&pr_rec_id=7b8882b26&pr_rec_pid=8013561757975&pr_ref_pid=69012291599&pr_seq=uniform).
+2. Default credentials:
+   - **Username:** `odroid`
+   - **Password:** `odroid`
+3. Create a new user:
+   ```bash
+   sudo adduser teamlary
+   ```
+4. Grant sudo privileges:
+   ```bash
+   sudo usermod -aG sudo teamlary
+   ```
+5. Switch to the new user:
+   ```bash
+   su teamlary
+   ```
+6. Verify sudo privileges:
+   ```bash
+   sudo whoami
+   ```
+   Output should be `root`.
+7. Change password:
+   ```bash
+   passwd
+   ```
+8. Delete the default user:
+   ```bash
+   sudo su
+   userdel odroid
+   userdel -r odroid
+   ```
 
-- Veiw Time Zone Details:
-```timedatectl  status```
+---
 
-- Set Time Zone to UTC Time: 
-```timedatectl set-timezone UTC```
+## 🕒 Time Zone Configuration
 
-- Set Local (Real Time Clock) to UTC :
-```timedatectl set-local-rtc 0```
+Ensure an RTC module is installed. Follow these steps on all Linux-based MINTS nodes:
 
-- Sync with remote NTP(Network Time Protocol) server:
-```timedatectl set-ntp true```
+1. View current time settings:
+   ```bash
+   timedatectl status
+   ```
+2. Set time zone to UTC:
+   ```bash
+   timedatectl set-timezone UTC
+   ```
+3. Set RTC to UTC:
+   ```bash
+   timedatectl set-local-rtc 0
+   ```
+4. Enable NTP synchronization:
+   ```bash
+   timedatectl set-ntp true
+   ```
 
-Afterwards `timedatectl  status` should give the following:
-```
-timedatectl  status
-               Local time: Sat 2023-11-18 16:34:36 UTC
-           Universal time: Sat 2023-11-18 16:34:36 UTC
-                 RTC time: Sat 2023-11-18 16:34:36    
-                Time zone: UTC (UTC, +0000)           
-System clock synchronized: yes                        
-              NTP service: active                     
-          RTC in local TZ: no         
+After setup, `timedatectl status` should display synchronized UTC time.  
+Reference: [Tecmint Guide](https://www.tecmint.com/set-time-timezone-and-synchronize-time-using-timedatectl-command/)
 
-```
-Derived using this [link](https://www.tecmint.com/set-time-timezone-and-synchronize-time-using-timedatectl-command/)
+### Handling No Internet Scenarios
+If internet is unavailable, configure the system to sync time from the RTC by updating `/etc/rc.local`:
 
-Add this point it works if you have internet. But just incase you dont the rtc should update the system clock 
-
-As such you need to add 
-```
-# Check for internet connection
-if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
-    echo "$(date): Internet detected - Syncing system clock..."
-    sudo systemctl restart systemd-timesyncd
-
-    # Wait for NTP to sync
-    sleep 10
-
-    if timedatectl | grep -q "System clock synchronized: yes"; then
-        echo "$(date): Writing system time to RTC..."
-        hwclock -w
-    else
-        echo "$(date): System clock not synced yet. Skipping RTC update." >> /var/log/time_sync.log
-    fi
-else
-    echo "No internet connection: Syncing system time from RTC..."
-    hwclock -s
-fi
+Edit using:
+```bash
+sudo nano /etc/rc.local
 ```
 
-to the file `/etc/rc.local`. Using nano `sudo nano /etc/rc.local`
+Add the following content:
 
-The final file should look like the following 
-
-```
+```bash
 #!/bin/bash
 
 # Run first boot script if exists
@@ -96,7 +89,6 @@ if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
     echo "$(date): Internet detected - Syncing system clock..."
     sudo systemctl restart systemd-timesyncd
 
-    # Wait for NTP to sync
     sleep 10
 
     if timedatectl | grep -q "System clock synchronized: yes"; then
@@ -113,7 +105,6 @@ fi
 exit 0
 ```
 
-Whenever internet is available it will automatically update the rtc using the ntp time with the line `hwclock -w` given above. Likewise when there is no internet the rtc updates the system clock using `hwclock -s`.
-
-
-
+This ensures:
+- **With Internet:** System clock syncs via NTP and updates the RTC (`hwclock -w`).
+- **Without Internet:** System clock is restored from the RTC (`hwclock -s`).
