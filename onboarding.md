@@ -54,3 +54,18 @@ System clock synchronized: yes
 
 ```
 Derived using this [link](https://www.tecmint.com/set-time-timezone-and-synchronize-time-using-timedatectl-command/)
+
+Add this point it works if you have internet. But just incase you dont the rtc should update the system clock 
+
+As such you need to add 
+```
+# Check for internet connection
+if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
+    echo "Internet detected: NTP will handle time sync."
+else
+    echo "No internet connection: Syncing system time from RTC..."
+    hwclock -s
+fi
+```
+to the file `/etc/rc.local`
+
