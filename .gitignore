@@ -1,6 +1,19 @@
-fp-info-cache
-*-backups/
-*.bak
+# macOS
+.DS_Store
+
+# Logs / temp
+*.log
 *.tmp
+*.bak
+*~
+*.swp
+
+# KiCad (common)
 *.kicad_prl
-*.kicad_pro.user
+*.kicad_prl-bak
+*.kicad_pro-bak
+_autosave-*
+*-save.kicad_sch
+*-save.kicad_pcb
+*.kicad_sch-bak
+*.kicad_pcb-bak
