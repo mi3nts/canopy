@@ -64,13 +64,13 @@ def main():
                 # mSR.sensorFinisher(dateTime, "sen0463", sensorDictionary)
               
     except serial.SerialException as e:
-        print(f"\nError opening serial port: {e}")
+        print(f"Error opening serial port: {e}")
 
     except KeyboardInterrupt:
         print("\nExiting program.")
 
     finally:
-        if ser.isOpen():
+        if 'ser' in locals() and ser.isOpen():
             ser.close()
             print("Serial port closed.\n")
 
