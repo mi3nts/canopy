@@ -12,10 +12,12 @@ BAUD_RATE = 115200
 def extractNumbers(line, isFloat = False):
     if isFloat:
         numbers = re.findall(r'\d+\.\d+', line)
+        numbers = ''.join(numbers)
+        return float(numbers)
     else:
         numbers = re.findall(r'\d+', line)
-    numbers = ''.join(numbers)
-    return numbers
+        numbers = ''.join(numbers)
+        return int(numbers)
 
 
 def main():
@@ -62,16 +64,16 @@ def main():
                 # mSR.sensorFinisher(dateTime, "sen0463", sensorDictionary)
               
     except serial.SerialException as e:
-        print(f"Error opening serial port: {e}")
+        print(f"\nError opening serial port: {e}")
 
     except KeyboardInterrupt:
         print("\nExiting program.")
 
     finally:
-        if 'ser' in locals() and ser.isOpen():
+        if ser.isOpen():
             ser.close()
-            print("Serial port closed.")
+            print("Serial port closed.\n")
 
 if __name__ == "__main__":
-    print("======= MINTS RADIATION SENSING =======\n")
+    print("\n======= MINTS RADIATION SENSING =======\n")
     main()
