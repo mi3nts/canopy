@@ -82,12 +82,14 @@ if __name__ == "__main__":
                 sensorDictionary = OrderedDict([
                 ("dateTime",            str(dateTime)),
                 ("PM1",         pm1)])
+                mSR.sensorFinisher(dateTime, "RS-FSXCS-N01-3", sensorDictionary)
+
             else:
                 print("Waiting for sensor response...")
 
             time.sleep(1)
 
     except KeyboardInterrupt:
-        print("\nStopping sensor...")
+        print("\nStopping sensor...\n")
         opc.set_fan_laser(False)
         opc.close()
