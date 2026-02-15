@@ -1,6 +1,14 @@
 #include <Wire.h>
 #include <multi_channel_relay.h>
 
+
+// NOTES
+// We made some minor changes to multi_channel_relay.cpp's scanI2CDevices() function
+// It is not used here but if you find it crashes the arduino, use that and it might fix it
+// TODO: 
+// include LoRaWAN node support (should be easy, but not testable yet)
+
+
 Multi_Channel_Relay relay;
 
 const unsigned long TIMEOUT_MS = 10000;    
@@ -75,12 +83,12 @@ void checkAndReset(OdroidMonitor &mon, String name) {
 }
 
 void performReset(OdroidMonitor &mon) {
-  relay.turn_off_channel(getChannelNumber(mon.relayChannelBit)); 
+  relay.turn_off_channel(_getChannelNumber(mon.relayChannelBit)); 
   
   Serial.println("Power CUT");
   delay(RESET_TIME_MS); 
   
-  relay.turn_on_channel(getChannelNumber(mon.relayChannelBit));
+  relay.turn_on_channel(_getChannelNumber(mon.relayChannelBit));
   Serial.println("Power RESTORED");
 
   mon.isRecovering = true;
@@ -90,7 +98,7 @@ void performReset(OdroidMonitor &mon) {
 }
 
 // need to use a helper function as the relay channel uses one-hot
-int getChannelNumber(uint8_t bitmask) {
+int _getChannelNumber(uint8_t bitmask) {
   if (bitmask == 0x01) return 1;
   if (bitmask == 0x02) return 2;
   if (bitmask == 0x04) return 3;
