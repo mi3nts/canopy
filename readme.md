@@ -53,5 +53,5 @@ This system design leverages an **Odroid** as a powerful Edge IoT node, integrat
 
 ### Odroid N2 Pinout Connection
 - **Connection for 1B
-- ![Pinout Diagram](res/n2-pinout.png)
+- ![Pinout Diagram](res/n2_pinmap.png)
 
