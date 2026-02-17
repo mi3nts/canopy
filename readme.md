@@ -51,4 +51,7 @@ This system design leverages an **Odroid** as a powerful Edge IoT node, integrat
 6. Deploy local Grafana for edge-based dashboards and visualization.
 7. Access cloud Node-RED and Grafana for real-time monitoring and dashboards.
 
+### Odroid N2 Pinout Connection
+- **Connection for 1B
+- ![Pinout Diagram](res/n2-pinout.png)
 
