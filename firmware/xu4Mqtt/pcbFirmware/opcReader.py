@@ -3,8 +3,8 @@ import time
 import struct
 import datetime
 from collections import OrderedDict
-from mintsXU4 import mintsSensorReader as mSR
-from mintsXU4 import mintsDefinitions  as mD
+from ..mintsXU4 import mintsSensorReader as mSR
+from ..mintsXU4 import mintsDefinitions  as mD
 
 class OPCN3:
     def __init__(self, bus=0, device=0):
@@ -81,8 +81,10 @@ if __name__ == "__main__":
                 dateTime = datetime.datetime.now()
                 sensorDictionary = OrderedDict([
                 ("dateTime",            str(dateTime)),
-                ("PM1",         pm1)])
-                mSR.sensorFinisher(dateTime, "RS-FSXCS-N01-3", sensorDictionary)
+                ("PM1",         pm1),
+                ("PM2.5",       pm2_5),
+                ("PM10",        pm10)])
+                mSR.sensorFinisher(dateTime, "RS-FSXCS-N01", sensorDictionary)
 
             else:
                 print("Waiting for sensor response...")
