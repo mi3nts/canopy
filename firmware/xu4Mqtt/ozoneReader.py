@@ -3,8 +3,8 @@ import sys
 import serial
 import datetime
 
-# dataFolderReference    = mD.dataFolderReference
-# ozonePort              = mD.ozonePort
+dataFolderReference    = mD.dataFolderReference
+ozonePort              = mD.ozonePort
 
 ozonePort = "/dev/tty.usbserial-AU0647TN"
 
@@ -76,8 +76,8 @@ def main(portNum):
                     # dateTime = datetime.datetime.now()
 
 					# # The Output shouldnt have any letters
-                    # if(not(any(c.isalpha() for c in dataString))):
-                    #     mSR.TB108LWrite(dataString,dateTime)
+                    if(not(any(c.isalpha() for c in dataString))):
+                        mSR.TB108LWrite(dataString,dateTime)
                     line = []
         except:
             print("Incomplete read. Something may be wrong with {0}".format(ozonePort[0]))

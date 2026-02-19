@@ -3,8 +3,8 @@ import time
 import datetime
 import re 
 from collections import OrderedDict
-#from mintsXU4 import mintsSensorReader as mSR
-#from mintsXU4 import mintsDefinitions  as mD
+from mintsXU4 import mintsSensorReader as mSR
+from mintsXU4 import mintsDefinitions  as mD
 
 ARDUINO_PORT = '/dev/ttyACM0'  
 BAUD_RATE = 115200
@@ -61,7 +61,7 @@ def main():
                 nSvh = None
                 uSvh = None
                 print(sensorDictionary)
-                # mSR.sensorFinisher(dateTime, "sen0463", sensorDictionary)
+                mSR.sensorFinisher(dateTime, "sen0463", sensorDictionary)
               
     except serial.SerialException as e:
         print(f"Error opening serial port: {e}")

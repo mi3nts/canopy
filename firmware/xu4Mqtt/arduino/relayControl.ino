@@ -31,7 +31,6 @@ OdroidMonitor odroid2 = {15, 0x02, LOW, 0, true, 0};
 
 void setup() {
   Serial.begin(9600);
-  while(!Serial);
 
   pinMode(odroid1.pin, INPUT);
   pinMode(odroid2.pin, INPUT);
