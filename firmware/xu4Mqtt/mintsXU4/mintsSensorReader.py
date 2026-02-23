@@ -28,6 +28,9 @@ from collections import OrderedDict
 import netifaces as ni
 import math
 import json
+import pandas as pd 
+from mintsPMCorrections import corrections as mC
+import traceback
 
 macAddress      = mD.macAddress
 dataFolder      = mD.dataFolder
@@ -35,51 +38,40 @@ latestDisplayOn = mD.latestDisplayOn
 dataFolderMQTT  = mD.dataFolderMQTT
 latestOn        = mD.latestOn
 mqttOn          = mD.mqttOn
+dataFolderTmp   = mD.dataFolderTmp
 
-def delayMints(timeSpent,loopIntervalIn):
-    loopIntervalReal = loopIntervalIn ;
-    if(loopIntervalReal>timeSpent):
-        waitTime = loopIntervalReal - timeSpent;
-        time.sleep(waitTime);
-    return time.time();
-
-
-def sensorFinisherWearable(dateTime,hostID,sensorName,sensorDictionary):
-    #Getting Write Path
-    writePath = getWritePathWearable(hostID,sensorName,dateTime)
-    exists = directoryCheck(writePath)
-    writeCSV2(writePath,sensorDictionary,exists)
-    # print(writePath)
-    if(mqttOn):
-       mL.writeMQTTLatestWearable(hostID,sensorName,sensorDictionary)
-    if(latestOn):
-       mL.writeJSONLatestWearable(hostID,sensorName,sensorDictionary)
-    print(sensorName)
-    print(sensorDictionary)
-
-
-def getWritePathWearable(nodeID,labelIn,dateTime):
-    #Example  : MINTS_0061_OOPCN3_2019_01_04.csv
-    print(nodeID)
-    writePath = dataFolder+"/"+nodeID+"/"+str(dateTime.year).zfill(4)  + "/" + str(dateTime.month).zfill(2)+ "/"+str(dateTime.day).zfill(2)+"/"+ "MINTS_"+ nodeID+ "_" +labelIn + "_" + str(dateTime.year).zfill(4) + "_" +str(dateTime.month).zfill(2) + "_" +str(dateTime.day).zfill(2) +".csv"
-    return writePath;
 
 
 
 def sensorFinisher(dateTime,sensorName,sensorDictionary):
-    #Getting Write Path
+    print("-----------------------------------")
+    print("-------- Sensor Finisher ----------")
+    print(sensorName)
     writePath = getWritePath(sensorName,dateTime)
     exists = directoryCheck(writePath)
     writeCSV2(writePath,sensorDictionary,exists)
     print(writePath)
+
     if(latestOn):
        mL.writeJSONLatest(sensorDictionary,sensorName)
     if(mqttOn):
        mL.writeMQTTLatest(sensorDictionary,sensorName)   
 
-    print("-----------------------------------")
-    print(sensorName)
-    print(sensorDictionary)
+
+    mC.doPrediction(sensorName,sensorDictionary,dateTime)
+    print()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def sensorFinisherReference(dateTime,sensorName,sensorDictionary):
@@ -178,28 +170,33 @@ def sensorSend(sensorID,sensorData,dateTime):
         AS3935Write(sensorData, dateTime)
     # End (Added on May 21 st, 2020 )
 
-
-# For Wearable Sensor - Added Oct 5 2022  
-def gpsStatus(fileIn):
-    try:    
-        with open(fileIn, 'r') as f:
-            data = json.load(f)
-
-        return data['gps'] == "on" 
-    except Exception as e:
-        print(e)
-
-    print("GPS Turned Off")
-    return False
-
-
-
+# Added on Feb 13, 2023
+def RG15Write(sensorData, dateTime):
+    sensorData = sensorData.replace('Acc', "").replace('Total', "").replace('Event', "").replace('Total', "").replace('RInt', "").replace('mph', "").replace('m', "").replace(" ", "")
+    dataOut    = sensorData.split(',')
+    sensorName = "RG15"
+    dataLength = 4
+    
+    #Data String: Acc  0.00 mm, EventAcc  0.00 mm, TotalAcc  0.00 mm, RInt  0.00 mmph
+    if(len(dataOut) ==(dataLength)):
+        sensorDictionary = OrderedDict([
+                ("dateTime"          ,str(dateTime)),
+                ("accumulation"      ,dataOut[0]),
+                ("eventAccumulation" ,dataOut[1]),
+                ("totalAccumulation" ,dataOut[2]),
+                ("rainPerInterval"   ,dataOut[3])
+        	     ])
+        print(sensorDictionary)
+        sensorFinisher(dateTime,sensorName,sensorDictionary)
+    
+    
+    
 # For QLM RAD Reader - Added April 4 2022      
 def QLMRAD001Write(dataString,dateTime):
     sensorName = "QLMRAD001"
     if len(dataString)==4:
         sensorDictionary = OrderedDict([
-            ("dateTime"    ,str(dateTime)),
+            ("dateTime"   ,str(dateTime)),
             ("event"      ,dataString),
                         ])    
         sensorFinisher(dateTime,sensorName,sensorDictionary)  
@@ -403,9 +400,10 @@ def AS3935Write(sensorData,dateTime):
 def IPS7100Write(sensorData,dateTime):
     dataOut    = sensorData.split(',')
     sensorName = "IPS7100"
-    dataLength1 = 29
-    dataLength2 = 30
-    if(len(dataOut) == (dataLength1) or len(dataOut) == (dataLength2)):
+    dataLength = 30
+    # print(len(dataOut))
+    # print(dataOut)
+    if(len(dataOut) == (dataLength) or len(dataOut) == (dataLength - 1)):
         sensorDictionary =  OrderedDict([
                 ("dateTime" , str(dateTime)), # always the same
         		("pc0_1"  ,dataOut[1]), 
@@ -423,6 +421,7 @@ def IPS7100Write(sensorData,dateTime):
             	("pm5_0"  ,dataOut[25]),         
                 ("pm10_0"  ,dataOut[27])
                 ])
+        print(sensorDictionary)
         sensorFinisher(dateTime,sensorName,sensorDictionary)
         
 def BME680Write(sensorData,dateTime):
@@ -438,175 +437,7 @@ def BME680Write(sensorData,dateTime):
             	("gas"          ,dataOut[3])
                 ])
         sensorFinisher(dateTime,sensorName,sensorDictionary)
-
-def BNO080V2WriteI2c(sensorData):
-    sensorName = "BNO080V2"
-    dataLength = 12  # Adjusted to match the actual number of elements expected in sensorData
-    if len(sensorData) == dataLength:
-        sensorDictionary = OrderedDict([
-            ("dateTime",             str(sensorData[0])), 
-            ("accelerationX",        sensorData[1]),
-            ("accelerationY",        sensorData[2]),
-            ("accelerationZ",        sensorData[3]),
-            ("angularVelocityX",     sensorData[4]),
-            ("angularVelocityY",     sensorData[5]),
-            ("angularVelocityZ",     sensorData[6]),
-            ("quaternionI",          sensorData[7]),
-            ("quaternionJ",          sensorData[8]),
-            ("quaternionK",          sensorData[9]),
-            ("quaternionReal",       sensorData[10]),
-            ("heading",              sensorData[11]),
-        ])
-        sensorFinisher(sensorData[0], sensorName, sensorDictionary)
-
-def ICM20948WriteI2c(sensorData):
-    sensorName = "ICM20948"
-    dataLength = 10  # Adjusted to match the actual number of elements expected in sensorData
-    if len(sensorData) == dataLength:
-        sensorDictionary = OrderedDict([
-            ("dateTime",             str(sensorData[0])), 
-            ("accelerationX",        sensorData[1]),
-            ("accelerationY",        sensorData[2]),
-            ("accelerationZ",        sensorData[3]),
-            ("angularVelocityX",     sensorData[4]),
-            ("angularVelocityY",     sensorData[5]),
-            ("angularVelocityZ",     sensorData[6]),
-            ("magneticFluxDensityX", sensorData[7]),
-            ("magneticFluxDensityY", sensorData[8]),
-            ("magneticFluxDensityZ", sensorData[9]),
-        ])
-        sensorFinisher(sensorData[0], sensorName, sensorDictionary)
-
-def BNO080WriteI2c(sensorData):
-    sensorName = "BNO080"
-    dataLength = 31  # Adjusted to match the actual number of elements expected in sensorData
-    if len(sensorData) == dataLength:
-        sensorDictionary = OrderedDict([
-            ("dateTime",             str(sensorData[0])), 
-            ("accelerationX",        sensorData[1]),
-            ("accelerationY",        sensorData[2]),
-            ("accelerationZ",        sensorData[3]),
-            ("linearAccelerationX",  sensorData[4]),
-            ("linearAccelerationY",  sensorData[5]),  
-            ("linearAccelerationZ",  sensorData[6]),  
-            ("angularVelocityX",     sensorData[7]),
-            ("angularVelocityY",     sensorData[8]),
-            ("angularVelocityZ",     sensorData[9]),
-            ("magneticFluxDensityX", sensorData[10]),
-            ("magneticFluxDensityY", sensorData[11]),
-            ("magneticFluxDensityZ", sensorData[12]),
-            ("quaternionI",          sensorData[13]),
-            ("quaternionJ",          sensorData[14]),
-            ("quaternionK",          sensorData[15]),
-            ("quaternionReal",       sensorData[16]),
-            ("heading",              sensorData[17]),
-            ("steps",                sensorData[18]),
-            ("shake",                sensorData[19]),
-            ("mostLikelyIndex",      sensorData[20]),
-            ("mostLikelyConfidence", sensorData[21]),
-            ("unknown",              sensorData[22]),
-            ("inVehicle",            sensorData[23]),
-            ("onBicycle",            sensorData[24]),
-            ("onFoot",               sensorData[25]),
-            ("still",                sensorData[26]),
-            ("tilting",              sensorData[27]),
-            ("walking",              sensorData[28]),
-            ("running",              sensorData[29]),
-            ("onStairs",             sensorData[30])
-        ])
-        sensorFinisher(sensorData[0], sensorName, sensorDictionary)
-
-def TMP117WriteI2c(sensorData):
-    sensorName = "TMP117"
-    dataLength = 2
-    if(len(sensorData) == dataLength):
-        sensorDictionary =  OrderedDict([
-                ("dateTime"     ,str(sensorData[0])), 
-        		("temperature"  ,sensorData[1]),
-                ])
-        sensorFinisher(sensorData[0],sensorName,sensorDictionary)   
-
-
-def CHT8305CWriteI2c(sensorData):
-    sensorName = "CHT8305C"
-    dataLength = 4
-    if(len(sensorData) == dataLength):
-        sensorDictionary =  OrderedDict([
-                ("dateTime"     ,str(sensorData[0])), 
-        		("temperature"  ,sensorData[1]),
-                ("humidity"     ,sensorData[2]),
-                ("dewPoint"     ,sensorData[3])
-                ])
-        sensorFinisher(sensorData[0],sensorName,sensorDictionary)  
-
-
-def BME280V3WriteI2c(sensorData):
-    sensorName = "BME280V3"
-    dataLength = 6
-    if(len(sensorData) == dataLength):
-        sensorDictionary =  OrderedDict([
-                ("dateTime"     ,str(sensorData[0])), 
-        		("temperature"  ,sensorData[1]),
-            	("pressure"     ,sensorData[2]),
-                ("humidity"     ,sensorData[3]),
-            	("dewPoint"     ,sensorData[4]),
-            	("altitude"     ,sensorData[5])
-                ])
-        # with open("bme280.csv", "w") as outfile:
-            #csvwriter = csv.writer(outfile)
-            #csvwriter.writerow(dict(sensorDictionary))
-            #csvwriter.writerow(dict(sensorDictionary).values()) # temp write to .csv file REMOVE OR EDIT THIS
-        sensorFinisher(sensorData[0],sensorName,sensorDictionary)
-
-def IPS7100WriteI2c(sensorData):
-    sensorName = "IPS7100"
-    dataLength = 15
-    if(len(sensorData) == dataLength):
-        sensorDictionary =  OrderedDict([
-                ("dateTime"     ,str(sensorData[0])), 
-           		("pc0_1"        ,sensorData[1]), 
-            	("pc0_3"        ,sensorData[2]),
-                ("pc0_5"        ,sensorData[3]),
-                ("pc1_0"        ,sensorData[4]),
-            	("pc2_5"        ,sensorData[5]),
-        		("pc5_0"        ,sensorData[6]),
-            	("pc10_0"       ,sensorData[7]),
-                ("pm0_1"        ,sensorData[8]),
-            	("pm0_3"        ,sensorData[9]),
-        		("pm0_5"        ,sensorData[10]), 
-            	("pm1_0"        ,sensorData[11]),
-                ("pm2_5"        ,sensorData[12]),
-            	("pm5_0"        ,sensorData[13]),      
-                ("pm10_0"       ,sensorData[14]),
-                ])
-    sensorFinisher(sensorData[0],sensorName,sensorDictionary)     
-
-def COZIRAEH2000Write(sensorData):
-    sensorName = "COZIRAEH2000"
-    dataLength = 5
-    if(len(sensorData) == dataLength):
-        sensorDictionary =  OrderedDict([
-                ("dateTime"     ,str(sensorData[0])), 
-        		("co2Recent"    ,sensorData[1]),
-            	("co2Filtered"  ,sensorData[2]),
-                ("temperature"  ,sensorData[3]),
-            	("humidity"     ,sensorData[4]),
-            	])
-        sensorFinisher(sensorData[0],sensorName,sensorDictionary)     
-
-def BME280WriteI2c(sensorData):
-    
-    sensorName = "BME280"
-    dataLength = 5
-    if(len(sensorData) == dataLength):
-        sensorDictionary =  OrderedDict([
-                ("dateTime"     ,str(sensorData[0])), 
-        		("temperature"  ,sensorData[1]),
-            	("pressure"     ,sensorData[2]),
-                ("humidity"     ,sensorData[3]),
-            	("altitude"     ,sensorData[4])
-                ])
-        sensorFinisher(sensorData[0],sensorName,sensorDictionary)      
+        
         
 def BME280Write(sensorData,dateTime):
     dataOut    = sensorData.split(':')
@@ -642,21 +473,6 @@ def MGS001Write(sensorData,dateTime):
         sensorFinisher(dateTime,sensorName,sensorDictionary)
 
 
-def SCD30WriteI2c(sensorData):
-    sensorName = "SCD30V2"
-    dataLength = 4
-    if sensorData is not None:
-        if(len(sensorData) == (dataLength)):
-            sensorDictionary =  OrderedDict([
-                    ("dateTime"     ,str(sensorData[0])),
-                    ("co2"          ,sensorData[1]),
-                    ("temperature"  ,sensorData[2]),
-                    ("humidity"     ,sensorData[3]),
-                    ])
-            sensorFinisher(sensorData[0],sensorName,sensorDictionary)
-    else:
-        print("No Sensor Data Retun")          
-
 def SCD30Write(sensorData,dateTime):
     dataOut    = sensorData.split(':')
     sensorName = "SCD30"
@@ -667,6 +483,7 @@ def SCD30Write(sensorData,dateTime):
         		("c02"          ,dataOut[0]),
             	("temperature"  ,dataOut[1]),
                 ("humidity"     ,dataOut[2]),
+
                 ])
         sensorFinisher(dateTime,sensorName,sensorDictionary)
 
@@ -1099,9 +916,9 @@ def GPSGPGGAWrite(dataString,dateTime):
 def GPSGPGGA2Write(dataString,dateTime):
     dataStringPost = dataString.replace('\n', '')
     sensorData = pynmea2.parse(dataStringPost)
-    print(dataStringPost)    
+    latitudeCordinate = getLatitudeCords(sensorData.lat,sensorData.lat_dir)
+
     if(sensorData.gps_qual>0):
-        latitudeCordinate = getLatitudeCords(sensorData.lat,sensorData.lat_dir)
         sensorName = "GPSGPGGA2"
         sensorDictionary = OrderedDict([
                 ("dateTime"          ,str(dateTime)),
@@ -1154,7 +971,6 @@ def GPSGPRMC2Write(dataString,dateTime):
 
     dataStringPost = dataString.replace('\n', '')
     sensorData = pynmea2.parse(dataStringPost)
-    print(dataStringPost)
     if(sensorData.status=='A'):
         sensorName = "GPSGPRMC2"
         sensorDictionary = OrderedDict([
@@ -1173,7 +989,7 @@ def GPSGPRMC2Write(dataString,dateTime):
                 ("magVariation"         ,sensorData.mag_variation),
                 ("magVariationDirection",sensorData.mag_var_dir)
                  ])
-
+        # print(sensorDictionary)
         #Getting Write Path
         sensorFinisher(dateTime,sensorName,sensorDictionary)
 
@@ -1278,31 +1094,8 @@ def directoryCheck(outputPath):
     exists = os.path.isfile(outputPath)
     directoryIn = os.path.dirname(outputPath)
     if not os.path.exists(directoryIn):
-        print("Creating Folder @:" + directoryIn)
         os.makedirs(directoryIn)
     return exists
-
-def directoryCheck2(outputPath):
-    isFile = os.path.isfile(outputPath)
-    if isFile:
-        return True
-    if outputPath.find(".") > 0:
-        directoryIn = os.path.dirname(outputPath)
-    else:
-        directoryIn = os.path.dirname(outputPath+"/")
-
-    if not os.path.exists(directoryIn):
-        print("Creating Folder @:" + directoryIn)
-        os.makedirs(directoryIn)
-        return False
-    return True;
-
-
-
-
-
-
-
 
 def csvWriter(writePath,organizedData,keys):
     with open(writePath,'w') as output_file:

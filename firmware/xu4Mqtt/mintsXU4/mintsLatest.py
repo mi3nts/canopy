@@ -19,7 +19,7 @@ mqttBroker          = mD.mqttBroker
 mqttCredentialsFile = mD.mqttCredentialsFile
 
 # FOR MQTT 
-credentials = yaml.load(open(mqttCredentialsFile),Loader=yaml.FullLoader)
+credentials = yaml.load(open(mqttCredentialsFile))
 connected   = False  # Stores the connection status
 broker      = mqttBroker
 port        = mqttPort # Secure port
@@ -31,6 +31,7 @@ mqtt_client = mqttClient.Client()
 def on_connect(client, userdata, flags, rc):
     global connected  # Use global variable
     if rc == 0:
+
         print("[INFO] Connected to broker")
         connected = True  # Signal connection
     else:
@@ -50,8 +51,8 @@ def connect(mqtt_client, mqtt_username, mqtt_password, broker_endpoint, port):
             mqtt_client.on_connect = on_connect
             mqtt_client.on_publish = on_publish
             mqtt_client.tls_set(ca_certs=tlsCert, certfile=None,
-                              keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
-                              tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
+                                keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
+                                tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
             mqtt_client.tls_insecure_set(False)
             mqtt_client.connect(broker_endpoint, port=port)
             mqtt_client.loop_start()
@@ -67,35 +68,13 @@ def connect(mqtt_client, mqtt_username, mqtt_password, broker_endpoint, port):
         if not connected:
             print("[ERROR] Could not connect to broker")
             return False
-	  
+    
     except Exception as e:
         print(e)
         return False
-      
+
     return True
 
-# Added for wearable sensor Oct 13th 2022
-def writeJSONLatestWearable(hostID,sensorName,sensorDictionary):
-    directoryIn  = dataFolder+"/"+hostID+"/"+sensorName+".json"
-    print(directoryIn)
-    try:
-        with open(directoryIn,'w') as fp:
-            json.dump(sensorDictionary, fp)
-
-    except:
-        print("Json Data Not Written")
-
-def writeMQTTLatestWearable(hostID,sensorName,sensorDictionary):
-
-    if connect(mqtt_client, mqttUN, mqttPW, broker, port):
-        try:
-            mqtt_client.publish(hostID+"/"+sensorName,json.dumps(sensorDictionary))
-
-        except Exception as e:
-            print("[ERROR] Could not publish data, error: {}".format(e))
-    
-    return True
-    
 
 def writeMQTTLatest(sensorDictionary,sensorName):
 
@@ -108,7 +87,6 @@ def writeMQTTLatest(sensorDictionary,sensorName):
     
     return True
     
-
 
 
 def writeJSONLatest(sensorDictionary,sensorName):
