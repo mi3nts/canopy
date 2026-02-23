@@ -58,7 +58,7 @@ def sensorFinisher(dateTime,sensorName,sensorDictionary):
        mL.writeMQTTLatest(sensorDictionary,sensorName)   
 
 
-    # mC.doPrediction(sensorName,sensorDictionary,dateTime)
+#    mC.doPrediction(sensorName,sensorDictionary,dateTime)
     print()
 
 
@@ -921,20 +921,20 @@ def GPSGPGGA2Write(dataString,dateTime):
     if(sensorData.gps_qual>0):
         sensorName = "GPSGPGGA2"
         sensorDictionary = OrderedDict([
-                ("dateTime"          ,str(dateTime)),
-                ("timestamp"         ,str(sensorData.timestamp)),
-                ("latitudeCoordinate" ,getLatitudeCords(sensorData.lat,sensorData.lat_dir)),
-                ("longitudeCoordinate",getLongitudeCords(sensorData.lon,sensorData.lon_dir)),
-                ("latitude"          ,sensorData.lat),
-                ("latitudeDirection" ,sensorData.lat_dir),
-                ("longitude"         ,sensorData.lon),
-                ("longitudeDirection",sensorData.lon_dir),
-                ("gpsQuality"        ,sensorData.gps_qual),
-                ("numberOfSatellites",sensorData.num_sats),
-                ("HorizontalDilution",sensorData.horizontal_dil),
-                ("altitude"          ,sensorData.altitude),
-                ("altitudeUnits"     ,sensorData.altitude_units),
-                ("undulation"        ,sensorData.geo_sep),
+                ("dateTime"          , dateTime), # Keep as object or ISO string
+                ("timestamp"         , str(sensorData.timestamp)),
+                ("latitudeCoordinate", float(getLatitudeCords(sensorData.lat, sensorData.lat_dir))),
+                ("longitudeCoordinate", float(getLongitudeCords(sensorData.lon, sensorData.lon_dir))),
+                ("latitude"          , float(sensorData.lat) if sensorData.lat else 0.0),
+                ("latitudeDirection" , sensorData.lat_dir),
+                ("longitude"         , float(sensorData.lon) if sensorData.lon else 0.0),
+                ("longitudeDirection", sensorData.lon_dir),
+                ("gpsQuality"        , int(sensorData.gps_qual)),
+                ("numberOfSatellites", int(sensorData.num_sats)),
+                ("HorizontalDilution", float(sensorData.horizontal_dil)),
+                ("altitude"          , float(sensorData.altitude)),
+                ("altitudeUnits"     , sensorData.altitude_units),
+                ("undulation"        , float(sensorData.geo_sep)),
                 ("undulationUnits"   ,sensorData.geo_sep_units),
                 ("age"               ,sensorData.age_gps_data),
                 ("stationID"         ,sensorData.ref_station_id)
