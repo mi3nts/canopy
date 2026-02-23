@@ -44,7 +44,7 @@ def findUSBGPSPort():
         print(p.device, p.description)
         description = str(p.description)
         if "u-blox 7 - GPS/GNSS Receiver" in description:
-            return p.device  # returns string like "/dev/ttyACM0"
+            return p.device  
     return ozonePort
 
 
