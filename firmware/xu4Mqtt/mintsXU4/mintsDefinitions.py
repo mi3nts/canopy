@@ -41,10 +41,10 @@ def findUSBGPSPort():
     ports = list(serial.tools.list_ports.comports())
     ozonePort = []
     for p in ports:
-        currentPort = str(p[1])
-        if(currentPort.find("u-blox GNSS receiver")>=0):
-            ozonePort.append(str(p[0]).split(" ")[0])
-    return ozonePort
+        description = str(p.description)
+        if "u-blox GNSS receiver" in description:
+            return p.device  
+    return None
 
 
 def findMacAddress():
