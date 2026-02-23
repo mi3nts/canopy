@@ -29,7 +29,7 @@ import netifaces as ni
 import math
 import json
 import pandas as pd 
-from mintsPMCorrections import corrections as mC
+# from mintsPMCorrections import corrections as mC
 import traceback
 
 macAddress      = mD.macAddress
@@ -58,7 +58,7 @@ def sensorFinisher(dateTime,sensorName,sensorDictionary):
        mL.writeMQTTLatest(sensorDictionary,sensorName)   
 
 
-    mC.doPrediction(sensorName,sensorDictionary,dateTime)
+    # mC.doPrediction(sensorName,sensorDictionary,dateTime)
     print()
 
 
