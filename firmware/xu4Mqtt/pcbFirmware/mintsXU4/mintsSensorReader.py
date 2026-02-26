@@ -129,6 +129,12 @@ def BME280Write(sensorData,dateTime):
                 ])
         sensorFinisher(dateTime,sensorName,sensorDictionary)
 
+def delayMints(timeSpent,loopIntervalIn):
+    loopIntervalReal = loopIntervalIn ;
+    if(loopIntervalReal>timeSpent):
+        waitTime = loopIntervalReal - timeSpent;
+        time.sleep(waitTime);
+    return time.time();
 
 def sensorFinisherReference(dateTime,sensorName,sensorDictionary):
     # Getting Write Path
