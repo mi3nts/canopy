@@ -26,7 +26,7 @@ import os
 import smbus2
 
 from i2cMints.i2c_ips7100 import IPS7100
-from ..mintsXU4 import mintsSensorReader as mSR
+from mintsXU4 import mintsSensorReader as mSR
 
 debug        = False 
 bus          = smbus2.SMBus(3)
