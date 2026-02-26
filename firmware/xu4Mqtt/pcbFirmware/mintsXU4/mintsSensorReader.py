@@ -101,19 +101,23 @@ def COZIRAEH2000Write(sensorData):
             	])
         sensorFinisher(sensorData[0],sensorName,sensorDictionary)  
 
-def BME280WriteI2c(sensorData):
-    
-    sensorName = "BME280"
-    dataLength = 5
+def BME280V3WriteI2c(sensorData):
+    sensorName = "BME280V3"
+    dataLength = 6
     if(len(sensorData) == dataLength):
         sensorDictionary =  OrderedDict([
                 ("dateTime"     ,str(sensorData[0])), 
         		("temperature"  ,sensorData[1]),
             	("pressure"     ,sensorData[2]),
                 ("humidity"     ,sensorData[3]),
-            	("altitude"     ,sensorData[4])
+            	("dewPoint"     ,sensorData[4]),
+            	("altitude"     ,sensorData[5])
                 ])
-        sensorFinisher(sensorData[0],sensorName,sensorDictionary)    
+        # with open("bme280.csv", "w") as outfile:
+            #csvwriter = csv.writer(outfile)
+            #csvwriter.writerow(dict(sensorDictionary))
+            #csvwriter.writerow(dict(sensorDictionary).values()) # temp write to .csv file REMOVE OR EDIT THIS
+        sensorFinisher(sensorData[0],sensorName,sensorDictionary)   
 
 def BME280Write(sensorData,dateTime):
     dataOut    = sensorData.split(':')
