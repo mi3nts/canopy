@@ -61,7 +61,7 @@ def main():
                 nSvh = None
                 uSvh = None
                 print(sensorDictionary)
-                mSR.sensorFinisher(dateTime, "sen0463", sensorDictionary)
+                mSR.sensorFinisher(dateTime, "SEN0463", sensorDictionary)
               
     except serial.SerialException as e:
         print(f"Error opening serial port: {e}")

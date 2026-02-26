@@ -252,7 +252,7 @@ def GPGGAWriteAM(sensorData,dateTime):
     if((len(dataOut) == (dataLength +1)) and (gpsQuality>0)):
         sensorDictionary = OrderedDict([
                 ("dateTime"              ,str(dateTime)),
-        	("UTCTimeStamp"          ,dataOut[1]),
+        	    ("UTCTimeStamp"          ,dataOut[1]),
             	("latitude"              ,dataOut[2]),
                 ("latDirection"          ,dataOut[3]),
                 ("longitude"             ,dataOut[4]),
@@ -921,7 +921,7 @@ def GPSGPGGA2Write(dataString,dateTime):
     if(sensorData.gps_qual>0):
         sensorName = "GPSGPGGA2"
         sensorDictionary = OrderedDict([
-                ("dateTime"          , dateTime), # Keep as object or ISO string
+                ("dateTime"          , str(dateTime)), 
                 ("timestamp"         , str(sensorData.timestamp)),
                 ("latitudeCoordinate", float(getLatitudeCords(sensorData.lat, sensorData.lat_dir))),
                 ("longitudeCoordinate", float(getLongitudeCords(sensorData.lon, sensorData.lon_dir))),
@@ -940,7 +940,6 @@ def GPSGPGGA2Write(dataString,dateTime):
                 ("stationID"         ,sensorData.ref_station_id)
         	 ])
 
-        #Getting Write Path
         sensorFinisher(dateTime,sensorName,sensorDictionary)
 
 def GPSGPRMCWrite(dataString,dateTime):
