@@ -65,13 +65,69 @@ def sensorFinisher(dateTime,sensorName,sensorDictionary):
 
 
 
+def IPS7100WriteI2c(sensorData):
+    sensorName = "IPS7100"
+    dataLength = 15
+    if(len(sensorData) == dataLength):
+        sensorDictionary =  OrderedDict([
+                ("dateTime"     ,str(sensorData[0])), 
+           		("pc0_1"        ,sensorData[1]), 
+            	("pc0_3"        ,sensorData[2]),
+                ("pc0_5"        ,sensorData[3]),
+                ("pc1_0"        ,sensorData[4]),
+            	("pc2_5"        ,sensorData[5]),
+        		("pc5_0"        ,sensorData[6]),
+            	("pc10_0"       ,sensorData[7]),
+                ("pm0_1"        ,sensorData[8]),
+            	("pm0_3"        ,sensorData[9]),
+        		("pm0_5"        ,sensorData[10]), 
+            	("pm1_0"        ,sensorData[11]),
+                ("pm2_5"        ,sensorData[12]),
+            	("pm5_0"        ,sensorData[13]),      
+                ("pm10_0"       ,sensorData[14]),
+                ])
+    sensorFinisher(sensorData[0],sensorName,sensorDictionary) 
 
+def COZIRAEH2000Write(sensorData):
+    sensorName = "COZIRAEH2000"
+    dataLength = 5
+    if(len(sensorData) == dataLength):
+        sensorDictionary =  OrderedDict([
+                ("dateTime"     ,str(sensorData[0])), 
+        		("co2Recent"    ,sensorData[1]),
+            	("co2Filtered"  ,sensorData[2]),
+                ("temperature"  ,sensorData[3]),
+            	("humidity"     ,sensorData[4]),
+            	])
+        sensorFinisher(sensorData[0],sensorName,sensorDictionary)  
 
+def BME280WriteI2c(sensorData):
+    
+    sensorName = "BME280"
+    dataLength = 5
+    if(len(sensorData) == dataLength):
+        sensorDictionary =  OrderedDict([
+                ("dateTime"     ,str(sensorData[0])), 
+        		("temperature"  ,sensorData[1]),
+            	("pressure"     ,sensorData[2]),
+                ("humidity"     ,sensorData[3]),
+            	("altitude"     ,sensorData[4])
+                ])
+        sensorFinisher(sensorData[0],sensorName,sensorDictionary)    
 
-
-
-
-
+def BME280Write(sensorData,dateTime):
+    dataOut    = sensorData.split(':')
+    sensorName = "BME280"
+    dataLength = 4
+    if(len(dataOut) == (dataLength +1)):
+        sensorDictionary =  OrderedDict([
+                ("dateTime"     , str(dateTime)), # always the same
+        		("temperature"  ,dataOut[0]), # check with arduino code
+            	("pressure"     ,dataOut[1]),
+                ("humidity"     ,dataOut[2]),
+            	("altitude"     ,dataOut[3])
+                ])
+        sensorFinisher(dateTime,sensorName,sensorDictionary)
 
 
 def sensorFinisherReference(dateTime,sensorName,sensorDictionary):
