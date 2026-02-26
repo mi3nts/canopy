@@ -80,11 +80,11 @@ if __name__ == "__main__":
                 print(f"Bins: {data['bins']} | PM1: {pm1} | PM2.5: {data['pm2.5']:.2f} | PM10: {data['pm10']:.2f}")
                 dateTime = datetime.datetime.now()
                 sensorDictionary = OrderedDict([
-                ("dateTime",            str(dateTime)),
+                ("dateTime",    str(dateTime)),
                 ("PM1",         pm1),
                 ("PM2.5",       pm2_5),
                 ("PM10",        pm10)])
-                mSR.sensorFinisher(dateTime, "RS-FSXCS-N01", sensorDictionary)
+                mSR.sensorFinisher(dateTime, "OPCN3", sensorDictionary)
 
             else:
                 print("Waiting for sensor response...")
