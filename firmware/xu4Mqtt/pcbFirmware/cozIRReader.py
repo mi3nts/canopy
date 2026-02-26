@@ -2,8 +2,8 @@
 #
 import serial
 import datetime
-from ..mintsXU4 import mintsSensorReader as mSR
-from ..mintsXU4 import mintsDefinitions as mD
+from mintsXU4 import mintsSensorReader as mSR
+from mintsXU4 import mintsDefinitions as mD
 import time
 import re
 

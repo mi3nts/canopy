@@ -3,8 +3,8 @@ import time
 import struct
 import datetime
 from collections import OrderedDict
-from ..mintsXU4 import mintsSensorReader as mSR
-from ..mintsXU4 import mintsDefinitions  as mD
+from mintsXU4 import mintsSensorReader as mSR
+from mintsXU4 import mintsDefinitions  as mD
 
 class OPCN3:
     def __init__(self, bus=0, device=0):
