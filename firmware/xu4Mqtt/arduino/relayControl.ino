@@ -26,8 +26,8 @@ struct OdroidMonitor {
 
 
 // NOTE: the relay uses one-hot encoding; i.e. channel1 = 0001/0x01, channel2 = 0010 / 0x02, channel3 = 0100 / 0x04, channel4 = 1000 / 0x08
-OdroidMonitor odroid1 = {7,  0x04, LOW, 0, true, 0}; 
-OdroidMonitor odroid2 = {15, 0x02, LOW, 0, true, 0};
+OdroidMonitor odroid1 = {7,  0x04, LOW, 0, true, 0};
+OdroidMonitor odroid2 = {13, 0x02, LOW, 0, true, 0};
 
 void setup() {
   Serial.begin(9600);

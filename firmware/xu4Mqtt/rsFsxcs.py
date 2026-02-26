@@ -78,7 +78,7 @@ def main():
                     ("rainfall",         opticalRainfall)
                 ])
 
-                mSR.sensorFinisher(dateTime, "RS-FSXCS-N01-3", sensorDictionary)
+                mSR.sensorFinisher(dateTime, "RS_FSXCS_N01", sensorDictionary)
                 # print(sensorDictionary)
             time.sleep(1)
 
