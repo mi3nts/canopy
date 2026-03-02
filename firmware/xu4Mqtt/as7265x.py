@@ -40,7 +40,7 @@ def main():
                 ])
 
                 for i, channel in enumerate(channel_list):
-                    key = f"wave_{wavelength_map[channel]}nm"
+                    key = f"channelA{wavelength_map[channel]}nm"
                     sensorDictionary[key] = raw_data[i]
 
                 sensorDictionary["temp_avg"] = sensor.getTemperatureAverage()
