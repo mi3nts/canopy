@@ -2,6 +2,8 @@ import time
 import sys
 import serial
 import datetime
+from mintsXU4 import mintsSensorReader as mSR
+from mintsXU4 import mintsDefinitions as mD
 
 dataFolderReference    = mD.dataFolderReference
 ozonePort              = mD.ozonePort
