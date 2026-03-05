@@ -6,9 +6,9 @@ from mintsXU4 import mintsSensorReader as mSR
 from mintsXU4 import mintsDefinitions as mD
 
 dataFolderReference    = mD.dataFolderReference
-ozonePort              = mD.ozonePort
+#ozonePort              = mD.ozonePort
 
-ozonePort = "/dev/tty.usbserial-AU0647TN"
+ozonePort = "/dev/serial/by-id/usb-FTDI_USB-RS232_Cable_AU0647TN-if00-port0"
 
 baudRate = 2400
 
