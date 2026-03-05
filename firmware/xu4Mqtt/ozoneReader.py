@@ -75,7 +75,7 @@ def main(portNum):
                     dataString = ''.join(line)
                     dataString     = (''.join(line)).replace("\n","").replace("\r","")
                     print(dataString)
-                    # dateTime = datetime.datetime.now()
+                    dateTime = datetime.datetime.now()
 
 					# # The Output shouldnt have any letters
                     if(not(any(c.isalpha() for c in dataString))):
