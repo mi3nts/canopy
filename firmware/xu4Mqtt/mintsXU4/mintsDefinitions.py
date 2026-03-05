@@ -76,6 +76,7 @@ dataFolderMQTTReference   = "/home/teamlary/mintsData/referenceMQTT"
 dataFolder                = "/home/teamlary/mintsData/raw"
 dataFolderMQTT            = "/home/teamlary/mintsData/rawMQTT"
 dataFolderTmp             = "/home/teamlary/mintsDataTmp"
+dataFolderJson            = mintsDefinitions['dataFolderJson']
 
 ipsPorts              = findIPSPorts()
 USBRG15Port           = findUSBRG15Port()
