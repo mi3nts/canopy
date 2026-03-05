@@ -6,7 +6,7 @@ from collections import OrderedDict
 from mintsXU4 import mintsSensorReader as mSR
 from mintsXU4 import mintsDefinitions  as mD
 
-ARDUINO_PORT = '/dev/ttyACM0'  
+ARDUINO_PORT = '/dev/serial/by-id/usb-Espressif_USB_JTAG_serial_debug_unit_64:E8:33:51:12:28-if00'  
 BAUD_RATE = 115200
 
 def extractNumbers(line, isFloat = False):
