@@ -9,7 +9,7 @@ from mintsXU4 import mintsDefinitions  as mD
 
 def connectClient():
     client = ModbusSerialClient(
-        port='/dev/ttyUSB0',
+        port='/dev/ttyUSB1',
         baudrate=4800,
         bytesize=8,
         parity='N',
