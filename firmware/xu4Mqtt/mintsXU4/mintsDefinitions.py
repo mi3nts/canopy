@@ -70,13 +70,14 @@ def findMacAddress():
 
 
 fPortIDs                  = yaml.load(open('mintsXU4/credentials/portIDs.yml'),Loader=yaml.FullLoader)['portIDs']
+mintsDefinitions         = yaml.load(open('mintsXU4/credentials/mintsDefinitions.yaml'),Loader=yaml.FullLoader)
 
 dataFolderReference       = "/home/teamlary/mintsData/reference"
 dataFolderMQTTReference   = "/home/teamlary/mintsData/referenceMQTT"
 dataFolder                = "/home/teamlary/mintsData/raw"
 dataFolderMQTT            = "/home/teamlary/mintsData/rawMQTT"
 dataFolderTmp             = "/home/teamlary/mintsDataTmp"
-dataFolderJson            = mintsDefinitions['dataFolderJson']
+# dataFolderJson            = mintsDefinitions['dataFolderJson']
 
 ipsPorts              = findIPSPorts()
 USBRG15Port           = findUSBRG15Port()
