@@ -1,6 +1,7 @@
 
 from getmac import get_mac_address
 import serial.tools.list_ports
+import yaml
 
 def findPort(find):
     ports = list(serial.tools.list_ports.comports())
@@ -68,12 +69,12 @@ def findMacAddress():
     return "xxxxxxxx"
 
 
+fPortIDs                  = yaml.load(open('mintsXU4/credentials/portIDs.yml'),Loader=yaml.FullLoader)['portIDs']
 
 dataFolderReference       = "/home/teamlary/mintsData/reference"
 dataFolderMQTTReference   = "/home/teamlary/mintsData/referenceMQTT"
 dataFolder                = "/home/teamlary/mintsData/raw"
 dataFolderMQTT            = "/home/teamlary/mintsData/rawMQTT"
-
 dataFolderTmp             = "/home/teamlary/mintsDataTmp"
 
 ipsPorts              = findIPSPorts()
