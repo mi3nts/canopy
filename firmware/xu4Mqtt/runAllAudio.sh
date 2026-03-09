@@ -7,17 +7,9 @@ sleep 5
 kill $(pgrep -f 'python3 audioDeleter.py')
 sleep 5
 python3 audioDeleter.py &
-sleep 10
+sleep 30
 
-kill $(pgrep -f 'python3 audioRecorder.py')
+kill $(pgrep -f 'python3 audioReader.py')
 sleep 5
-python3 audioRecorder.py &
-sleep 120
-
-kill $(pgrep -f 'audioAnalyzer.py') 
-sleep 5
-python3 audioAnalyzer.py &
-sleep 5
-
-python3 ipReader.py
+/home/teamlary/gitHubRepos/canopy/firmware/xu4Mqtt/birdSongs/bin/python3 audioReader.py &
 sleep 5
