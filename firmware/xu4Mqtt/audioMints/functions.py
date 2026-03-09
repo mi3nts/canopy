@@ -374,7 +374,7 @@ def analyzeFile(item):
 ## 
 def makeAudioFile(sampleRateIn,audioLength,channelNum,fileName,fileSaveLocation):
     
-    recording = sd.rec(int(audioLength * sampleRateIn), samplerate=sampleRateIn, channels=channelNum)
+    recording = sd.rec(int(audioLength * sampleRateIn), samplerate=sampleRateIn, channels=channelNum, device=3)
     sd.wait()  # Wait until recording is finished
     write(os.path.join(fileSaveLocation,fileName), sampleRateIn, recording)  # Save as WAV file
     return recording;
