@@ -19,7 +19,7 @@ dataFolder = mD.dataFolder
 
 def main():
     # edited april 16 th
-    sensorName   = "SKYCAM"
+    sensorName   = "SKYCAM_002"
     dateTimeNow  = datetime.datetime.now()
     subFolder    = mSR.getWritePathSnaps(sensorName,dateTimeNow)
 
