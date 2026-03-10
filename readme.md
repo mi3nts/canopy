@@ -8,8 +8,30 @@ This system design leverages an **Odroid** as a powerful Edge IoT node, integrat
 
 ---
 
-### 🚀 Components
 
+## Electrical Data Parts List
+- **Raspberry Pi Zero 2W** (on [Dream V2.0 PCB Board](https://github.com/mi3nts/PCBMints2025) or later)
+    - OPC-N3 
+    - SJH-5A Methane Sensor (Not working on Dream V2.0 or earlier)
+    - BME280 
+    - IPS7100
+    - COZIR AH-E-1
+- **2x Odroid N2**
+    - RS-FSXCS Anemometer
+    - AS7265X
+    - LTR390
+    - SEN0463 Radiation sensor
+    - 2x G-MOUSE USB GPS
+    - USB Camera
+    - USB Microphone
+- **2x Arduino Boards**
+    - One for managing the relays (receives input from odroidHeartbeat.py)
+        - Ensure step up to 5V if board outputs 3.3V
+    - One for digitalizing analog outputs from SEN0463
+
+---
+
+## Data Management
 - **Git-Managed Dockerized Sensor Readers**: Python containers pulled from Git, reading sensors and publishing data via MQTT.
 - **Git-Managed Local Services**:
   - **Mosquitto (MQTT Broker)**: Manages local messaging.
@@ -54,4 +76,5 @@ This system design leverages an **Odroid** as a powerful Edge IoT node, integrat
 ### Odroid N2 Pinout Connection
 - **Connection for 1B
 - ![Pinout Diagram](res/n2_pinmap.png)
+
 
