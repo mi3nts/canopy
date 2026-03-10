@@ -1,0 +1,50 @@
+from datetime import timezone
+import time
+import os
+import datetime
+import numpy as np
+import pickle
+from skimage import io, color
+import cv2
+
+from mintsXU4 import mintsSkyCamReader as mSCR
+from mintsXU4 import mintsSensorReader as mSR
+from mintsXU4 import mintsDefinitions as mD
+
+
+dataFolder = mD.dataFolder
+
+# IF IT GIVES ERRORS:
+# pip install scikit-learn==0.24.2
+
+def main():
+    # edited april 16 th
+    sensorName   = "SKYCAM"
+    dateTimeNow  = datetime.datetime.now()
+    subFolder    = mSR.getWritePathSnaps(sensorName,dateTimeNow)
+
+    onboardCapture = True
+    while True:
+        try:
+            dateTimeNow  = datetime.datetime.now()
+            currentImage,imagePath =  mSCR.getSnapShotXU4(subFolder)
+            start = time.time()
+            modelName = 'naiveBayesModel.sav'
+            oneDImage, imageShape = mSCR.generateFeatures(currentImage,imagePath)
+            print("Loading Classifier")
+            loadedModel = pickle.load(open(modelName, 'rb'))
+            print("Done Loading")
+            predictionBinary,prediction = mSCR.getPredictionMatrix(loadedModel,oneDImage)
+            print("Deleting Resulting Images ...")
+            binaryImage = mSCR.writeBinaryImageXU4NoSave(predictionBinary,imageShape,imagePath,onboardCapture)
+            sensorDictionary  = mSCR.getResultsXU4002(currentImage,binaryImage,predictionBinary,prediction,imagePath,dateTimeNow)
+            mSR.sensorFinisher(dateTimeNow,sensorName,sensorDictionary)
+            mSCR.timeTaken("Preiction time is ",start)
+        except Exception as e:
+            print(e)
+            print("Exiting...")
+        time.sleep(5)
+
+
+if __name__ == "__main__":
+   main()
