@@ -1,0 +1,4 @@
+@reboot cd /home/teamlary/gitHubRepos/canopy/firmware/xu4Mqtt/pcbFirmware && ./runAll.sh 
+*/5 * * * * cd /home/teamlary/gitHubRepos/MASK/firmware/xu4Mqtt/pcbFirmware && python3 deleter.py
+* * * * * rsync -avzrtu -e "ssh -p 2222" /home/teamlary/mintsData/raw/ mints@mintsdata.utdallas.edu:raw
+0 0 * * * sudo reboot
