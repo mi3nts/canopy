@@ -385,7 +385,7 @@ def makeAudioFile(sampleRateIn,audioLength,channelNum,fileName,fileSaveLocation)
     deviceNum = findUsbDevice()
     if deviceNum is None:
         return None
-    recording = sd.rec(int(audioLength * sampleRateIn), samplerate=sampleRateIn, channels=channelNum, device=3)
+    recording = sd.rec(int(audioLength * sampleRateIn), samplerate=sampleRateIn, channels=channelNum, device=deviceNum)
     sd.wait()  # Wait until recording is finished
     write(os.path.join(fileSaveLocation,fileName), sampleRateIn, recording)  # Save as WAV file
     return recording
