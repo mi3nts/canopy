@@ -372,9 +372,9 @@ def analyzeFile(item):
 
 
 ## 
-def find_usb_device(target_name="USB Audio Device"):
+def findUsbDevice(target_name="USB Audio Device"):
     devices = sd.query_devices()
-    for i, device in enumerate[devices]:
+    for i, device in enumerate(devices):
         if target_name in device['name']:
             if device['max_input_channels'] > 0:
                 return i
@@ -382,8 +382,8 @@ def find_usb_device(target_name="USB Audio Device"):
                 return None
 
 def makeAudioFile(sampleRateIn,audioLength,channelNum,fileName,fileSaveLocation):
-    deviceNum = find_usb_device()
-    if deviceNum == None:
+    deviceNum = findUsbDevice()
+    if deviceNum is None:
         return None
     recording = sd.rec(int(audioLength * sampleRateIn), samplerate=sampleRateIn, channels=channelNum, device=3)
     sd.wait()  # Wait until recording is finished
