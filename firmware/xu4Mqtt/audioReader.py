@@ -50,11 +50,11 @@ def main(cfg,currentIndex):
         try:
             dateTime = datetime.datetime.now()
             recording = fn.makeAudioFile(sampleRate,period,channelSelected,audioFileNamePre+ ".wav",tmpFolderName)
-
-            # Freeze support for executable
-            if recording == None:
+            if recording is None:
                 time.sleep(1)
                 continue
+            
+            # Freeze support for executable
             freeze_support()
             cfg = fn.configSetUp(cfg,tmpFolderName,minConfidence,numOfThreads)
             soundClassData = pd.read_csv(tmpFolderName + '/'+ audioFileNamePre +  '.BirdNET.results.csv')
@@ -67,7 +67,7 @@ def main(cfg,currentIndex):
                     ("confidence"   ,row['Confidence'])
                      ])
                 mSR.sensorFinisher(dateTime,"MBC001",sensorDictionary)
-      
+
             print("=============")
             print()
 
