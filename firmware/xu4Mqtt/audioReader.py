@@ -51,10 +51,13 @@ def main(cfg,currentIndex):
             dateTime = datetime.datetime.now()
             recording = fn.makeAudioFile(sampleRate,period,channelSelected,audioFileNamePre+ ".wav",tmpFolderName)
 
-            # Freeze support for excecutable
+            # Freeze support for executable
+            if recording == None:
+                time.sleep(1)
+                continue
             freeze_support()
             cfg = fn.configSetUp(cfg,tmpFolderName,minConfidence,numOfThreads)
-            soundClassData = pd.read_csv(tmpFolderName + '/'+ audioFileNamePre+  '.BirdNET.results.csv')
+            soundClassData = pd.read_csv(tmpFolderName + '/'+ audioFileNamePre +  '.BirdNET.results.csv')
             soundClassData["Labels"] = soundClassData["Scientific name"].map(labels.set_index("Scientific name")["Labels"])
             print(soundClassData)
             for index, row in soundClassData.iterrows():
