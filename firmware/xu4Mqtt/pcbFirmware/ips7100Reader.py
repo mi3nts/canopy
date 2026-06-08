@@ -24,12 +24,15 @@ import sys
 import time
 import os
 import smbus2
+import datetime
 
 from i2cMints.i2c_ips7100 import IPS7100
 from mintsXU4 import mintsSensorReader as mSR
+from mintsPMCorrections import corrections as corr
 
 debug        = False 
 bus          = smbus2.SMBus(3)
+sensor       = "IPS7100"
 
 # IPS7100
 ips7100      = IPS7100(bus,debug)
@@ -45,7 +48,10 @@ def main(loopInterval):
         try:
             print("======= IPS7100 ========")
             if ips7100_valid:
-                mSR.IPS7100WriteI2c(ips7100.read())
+                data = ips7100.read()
+                dateTime = datetime.datetime.now()
+                mSR.IPS7100WriteI2c(data)
+                corr.doPrediction(sensor, data, dateTime)
             time.sleep(.5)    
             startTime = mSR.delayMints(time.time() - startTime,loopInterval)
             
