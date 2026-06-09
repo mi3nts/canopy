@@ -60,7 +60,7 @@ class BME280V3:
         dateTime = datetime.datetime.now() 
         measurement = bme280.sample(self.i2c, self.i2c_addr, self.calibration_params)
         if measurement is not None:
-            return [dateTime,\
+            return str(dateTime),\
                     measurement.temperature,\
                         100*measurement.pressure,\
                             measurement.humidity,\
