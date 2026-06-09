@@ -70,6 +70,7 @@ def main(loopInterval):
                     ("pm5_0"    , raw_data[12]),         
                     ("pm10_0"   , raw_data[13])
                 ])
+                print("types:", type(dateTime), type(pm_dict.get('pc0_1')))
                 corr.doPrediction(sensor, pm_dict, dateTime)
             time.sleep(.5)    
             startTime = mSR.delayMints(time.time() - startTime,loopInterval)
