@@ -95,7 +95,7 @@ gpsPort               = findPort("GPS/GNSS Receiver")
 
 # For Humidity Corrections
 pmSensor      = "IPS7100"
-climateSensor = "BME280V2"
+climateSensor = "BME280V3"
 modelFile     = 'mintsXU4/climateCorrectionModel.joblib'
 
 

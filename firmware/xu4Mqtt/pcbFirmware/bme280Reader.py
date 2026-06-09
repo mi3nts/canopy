@@ -28,15 +28,16 @@ import smbus2
 from i2cMints.i2c_bme280v3 import BME280V3
 #from i2cMints.i2c_tmp117 import TMP117
 #from i2cMints.i2c_cht8305c import CHT8305C
-
+from collections import OrderedDict
 from mintsXU4 import mintsSensorReader as mSR
+from mintsPMCorrections import corrections as corr
 
 debug        = False 
 bus          = smbus2.SMBus(5)
 
 # # BME280V3
 bme280v3     = BME280V3(bus,debug)
-
+sensor	     = "BME280V3"
 # # TMP117
 # tmp117      = TMP117(bus,debug) 
  
@@ -55,7 +56,16 @@ def main(loopInterval):
         try:
             print("======= BME280V3 ========")
             if bme280v3_valid:
-                mSR.BME280V3WriteI2c(bme280v3.read())
+                raw_data = bme280v3.read()
+                climate_dict = OrderedDict([
+                    ("dateTime"    , str(raw_data[0])),
+                    ("humidity"    , float(raw_data[1])),
+                    ("pressure"    , float(raw_data[2]) / 100),
+                    ("temperature" , float(raw_data[3])),
+                    ("dewPoint"    , float(raw_data[4]))
+                ])
+                corr.writeJSONLatestClimate(climate_dict,sensor)
+                mSR.BME280V3WriteI2c(raw_data)
             time.sleep(1)     
             
             # print("======= TMP117 ========")

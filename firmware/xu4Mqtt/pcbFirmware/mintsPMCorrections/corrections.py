@@ -41,8 +41,8 @@ climateSensor     = mD.climateSensor
 pmSensor          = mD.pmSensor
 dataFolderTmp     = mD.dataFolderTmp
 macAddress        = mD.macAddress
-modelFile         = mD.modelFile
-loaded_humidModel = joblib.load(modelFile)
+#modelFile         = mD.modelFile
+#loaded_humidModel = joblib.load(modelFile)
     
 def doPrediction(sensorID,sensorDictionary,dateTime):
 
@@ -60,11 +60,11 @@ def doPrediction(sensorID,sensorDictionary,dateTime):
     if sensorID == pmSensor:
         print("-----------------------------------")
         print("------- Humidity Correction -------")
-        # At this point load up the climate sensor 
+        # At this point load up the climate sensor
         print("PM data read")
         dateTime        = dateTime
         climateData     = loadJSONLatestClimate(climateSensor)
-        dateTimeClimate = datetime.datetime.strptime(climateData['dateTime'], "%Y-%m-%d %H:%M:%S.%f")
+        dateTimeClimate = str(datetime.datetime.strptime(climateData['dateTime'], "%Y-%m-%d %H:%M:%S.%f"))
 
  
 
@@ -145,9 +145,9 @@ def doPrediction(sensorID,sensorDictionary,dateTime):
                                                         cor_pc1_0, cor_pc2_5, cor_pc5_0, \
                                                             cor_pc10_0)
 
-            ml_pm2_5 ,mlValidity = \
-                                mlCorrectedPM(temperature,humidity,pressure,dewPoint,\
-                                            cor_pm2_5)
+            ml_pm2_5 ,mlValidity = cor_pm2_5
+#                                mlCorrectedPM(temperature,humidity,pressure,dewPoint,\
+#                                            cor_pm2_5)
         
         # At this point you generate the final ordered dictionary to  be published
         # check = round(cor_pc0_1)
@@ -233,10 +233,20 @@ def is_valid_humidity(humidity):
     return 0 <= humidity <= 100  # Assuming humidity is in percentage
 
 
-
 def keepClimateData(dateTime,sensorName,sensorDictionary):   
     climateData = [] 
-    if sensorName == "BME280V2":
+    
+    # Catch your BME280V3 raw list data and restructure it into the legacy format
+    if sensorName == "BME280V3" and isinstance(sensorDictionary, list):
+        climateData = OrderedDict([
+            ("dateTime"     ,str(sensorDictionary[0])),
+            ("temperature"  ,sensorDictionary[1]),
+            ("pressure"     ,sensorDictionary[2]), # Keep or divide by 100 depending on legacy unit expectations
+            ("humidity"     ,sensorDictionary[3]),
+            ("dewPoint"     ,sensorDictionary[4]),
+        ])
+        
+    elif sensorName == "BME280V2":
         climateData =  OrderedDict([
             ("dateTime"     ,str(dateTime)),
             ("temperature"  ,sensorDictionary['temperature']),
@@ -255,6 +265,7 @@ def keepClimateData(dateTime,sensorName,sensorDictionary):
                 ])
         
     if climateData:
+        # Pass the newly structured dictionary out to be dumped as valid JSON
         writeJSONLatestClimate(climateData,sensorName)
 
 def writeJSONLatestClimate(sensorDictionary,sensorName):
@@ -263,10 +274,11 @@ def writeJSONLatestClimate(sensorDictionary,sensorName):
     mSR.directoryCheck(directoryIn)
     try:
         with open(directoryIn,'w') as fp:
-            json.dump(sensorDictionary, fp)
+            json.dump(sensorDictionary, fp, default=str)
+            print("JSON Data written!")
 
-    except:
-        print("Json Data Not Written")
+    except Exception as e:
+        print("Json Data Not Written: ", e)
 
 def loadJSONLatestClimate(sensorName):
     directoryIn  = dataFolderTmp+"/"+macAddress+"/"+sensorName+".json"
