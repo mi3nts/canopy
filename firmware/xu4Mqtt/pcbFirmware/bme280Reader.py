@@ -58,7 +58,7 @@ def main(loopInterval):
             if bme280v3_valid:
                 raw_data = bme280v3.read()
                 climate_dict = OrderedDict([
-                    ("dateTime"    , str(raw_data[0])),
+                    ("dateTime"    , raw_data[0]),
                     ("humidity"    , float(raw_data[1])),
                     ("pressure"    , float(raw_data[2]) / 100),
                     ("temperature" , float(raw_data[3])),

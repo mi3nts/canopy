@@ -64,7 +64,7 @@ def doPrediction(sensorID,sensorDictionary,dateTime):
         print("PM data read")
         dateTime        = dateTime
         climateData     = loadJSONLatestClimate(climateSensor)
-        dateTimeClimate = str(datetime.datetime.strptime(climateData['dateTime'], "%Y-%m-%d %H:%M:%S.%f"))
+        dateTimeClimate = datetime.datetime.strptime(climateData['dateTime'], "%Y-%m-%d %H:%M:%S.%f")
 
  
 

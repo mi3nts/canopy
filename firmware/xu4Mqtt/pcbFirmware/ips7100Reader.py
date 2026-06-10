@@ -54,24 +54,24 @@ def main(loopInterval):
                 dateTime = str(datetime.datetime.now())
                 mSR.IPS7100WriteI2c(raw_data)
                 pm_dict = OrderedDict([
-                    ("dateTime" , str(dateTime)),
-                    ("pc0_1"    , raw_data[0]), 
-                    ("pc0_3"    , raw_data[1]),
-                    ("pc0_5"    , raw_data[2]),
-                    ("pc1_0"    , raw_data[3]),
-                    ("pc2_5"    , raw_data[4]),
-                    ("pc5_0"    , raw_data[5]), 
-                    ("pc10_0"   , raw_data[6]),
-                    ("pm0_1"    , raw_data[7]),
-                    ("pm0_3"    , raw_data[8]),
-                    ("pm0_5"    , raw_data[9]), 
-                    ("pm1_0"    , raw_data[10]),
-                    ("pm2_5"    , raw_data[11]),
-                    ("pm5_0"    , raw_data[12]),         
-                    ("pm10_0"   , raw_data[13])
+                    ("dateTime" , dateTime),
+                    ("pc0_1"    , raw_data[1]), 
+                    ("pc0_3"    , raw_data[2]),
+                    ("pc0_5"    , raw_data[3]),
+                    ("pc1_0"    , raw_data[4]),
+                    ("pc2_5"    , raw_data[5]),
+                    ("pc5_0"    , raw_data[6]), 
+                    ("pc10_0"   , raw_data[7]),
+                    ("pm0_1"    , raw_data[8]),
+                    ("pm0_3"    , raw_data[9]),
+                    ("pm0_5"    , raw_data[10]), 
+                    ("pm1_0"    , raw_data[11]),
+                    ("pm2_5"    , raw_data[12]),
+                    ("pm5_0"    , raw_data[13]),         
+                    ("pm10_0"   , raw_data[14])
                 ])
                 print("types:", type(dateTime), type(pm_dict.get('pc0_1')))
-                corr.doPrediction(sensor, pm_dict, dateTime)
+                corr.doPrediction(sensor, pm_dict, datetime.datetime.now())
             time.sleep(.5)    
             startTime = mSR.delayMints(time.time() - startTime,loopInterval)
             
