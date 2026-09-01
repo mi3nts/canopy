@@ -1,6 +1,6 @@
 if [ -d "./.venv" ]; then
-    echo "Removing existing .venv virtual environment. Starting in 5 seconds"
-    sleep 5
+    echo "Removing existing .venv virtual environment. Starting in 10 seconds"
+    sleep 10
     rm -rf ./.venv
 fi
 

@@ -9,6 +9,8 @@ if [ ! -d "./.venv" ]; then
     ./install.sh || exit 1
 fi
 
+source .venv/bin/activate
+
 kill $(pgrep -f 'python3 bme280Reader.py')
 sleep 5
 python3 bme280Reader.py &
@@ -20,18 +22,23 @@ sleep 5
 python3 cozIRReader.py &
 sleep 5
 
-kill $(pgrep -f 'python3 opcReader.py')  
-sleep 5
-python3 opcReader.py &
-sleep 5
+# OpcReader pending testing for Orange Pi Zero 2w
+#kill $(pgrep -f 'python3 opcReader.py')  
+#sleep 5
+#python3 opcReader.py &
+#sleep 5
 
 kill $(pgrep -f 'ips7100Reader.py')
 sleep 5
 python3 ips7100Reader.py &
 sleep 5
 
-# sht reader pending testing for rpi dream boards
-# kill $(pgrep -f 'sht40Reader.py')
-# sleep 5
-# python3 sht40Reader.py &
-# sleep 5
+kill $(pgrep -f 'sht40Reader.py')
+sleep 5
+python3 sht40Reader.py &
+sleep 5
+
+kill $(pgrep -f 'pms7003Reader.py')
+sleep 5
+python3 pms7003Reader.py &
+sleep 5
