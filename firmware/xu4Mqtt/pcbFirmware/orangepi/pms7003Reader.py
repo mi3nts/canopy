@@ -7,7 +7,7 @@ from i2cMints.pms7003 import PMS7003
 from mintsXU4 import mintsSensorReader as mSR
 
 debug        = False
-portIn       = "/dev/ttyS1"  
+portIn       = "/dev/ttyS5" # default S5 on Dream board  
 sensorName   = "PMS7003"
 loopInterval = 5
 

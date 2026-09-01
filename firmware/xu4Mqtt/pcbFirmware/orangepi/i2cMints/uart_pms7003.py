@@ -75,7 +75,7 @@ class PMS7003:
             p_10  = (data[24] << 8) | data[25]
 
             sensor_data = OrderedDict([
-                ("dateTime"      , str(dateTime)),
+                ("dateTime"      , dateTime),
                 ("pm1_0_standard", float(pm1_0_std)),
                 ("pm2_5_standard", float(pm2_5_std)),
                 ("pm10_0_standard", float(pm10_0_std)),
