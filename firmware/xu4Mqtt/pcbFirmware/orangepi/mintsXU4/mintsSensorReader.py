@@ -117,7 +117,25 @@ def BME280V3WriteI2c(sensorData):
             #csvwriter = csv.writer(outfile)
             #csvwriter.writerow(dict(sensorDictionary))
             #csvwriter.writerow(dict(sensorDictionary).values()) # temp write to .csv file REMOVE OR EDIT THIS
-        sensorFinisher(sensorData[0],sensorName,sensorDictionary)   
+        sensorFinisher(sensorData[0],sensorName,sensorDictionary)
+
+# For use with DREAM boards (containing multiple BME280's per board)
+def BME280V3WriteI2cDREAM(sensorData, sensorName):
+    dataLength = 6
+    if(len(sensorData) == dataLength):
+        sensorDictionary =  OrderedDict([
+                ("dateTime"     ,str(sensorData[0])), 
+        		("temperature"  ,sensorData[1]),
+            	("pressure"     ,sensorData[2]),
+                ("humidity"     ,sensorData[3]),
+            	("dewPoint"     ,sensorData[4]),
+            	("altitude"     ,sensorData[5])
+                ])
+        # with open("bme280.csv", "w") as outfile:
+            #csvwriter = csv.writer(outfile)
+            #csvwriter.writerow(dict(sensorDictionary))
+            #csvwriter.writerow(dict(sensorDictionary).values()) # temp write to .csv file REMOVE OR EDIT THIS
+        sensorFinisher(sensorData[0],sensorName,sensorDictionary)    
 
 def BME280Write(sensorData,dateTime):
     dataOut    = sensorData.split(':')

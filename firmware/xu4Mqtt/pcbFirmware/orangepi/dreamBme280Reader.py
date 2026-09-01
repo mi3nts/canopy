@@ -33,11 +33,14 @@ from mintsXU4 import mintsSensorReader as mSR
 from mintsPMCorrections import corrections as corr
 
 debug        = False 
-bus          = smbus2.SMBus(5)
+bus4          = smbus2.SMBus(4) #Busses 4 and 3 for Orange Pi Dream Board
+bus3          = smbus2.SMBus(3) #Busses 4 and 3 for Orange Pi Dream Board
 
 # # BME280V3
-bme280v3     = BME280V3(bus,debug)
-sensor	     = "BME280V3"
+bme280v3_bus4     = BME280V3(bus4,debug)
+bme280v3_bus3     = BME280V3(bus3,debug)
+sensor4	     = "BME280V3_2"
+sensor3      = "BME280V3"
 # # TMP117
 # tmp117      = TMP117(bus,debug) 
  
@@ -48,24 +51,36 @@ checkTrials  = 0
 loopInterval = 5 
 
 def main(loopInterval):
-    bme280v3_valid   = bme280v3.initiate(30)
+    bme280v3_valid4   = bme280v3_bus4.initiate(30)
+    bme280v3_valid3   = bme280v3_bus3.initiate(30)
     # tmp117_valid     = tmp117.initiate(30)
     # cht8305c_valid   = cht8305c.initiate()
     startTime    = time.time()
     while True:
         try:
             print("======= BME280V3 ========")
-            if bme280v3_valid:
-                raw_data = bme280v3.read()
+            if bme280v3_valid4:
+                raw_data4 = bme280v3_bus4.read()
                 climate_dict = OrderedDict([
-                    ("dateTime"    , raw_data[0]),
-                    ("humidity"    , float(raw_data[1])),
-                    ("pressure"    , float(raw_data[2]) / 100),
-                    ("temperature" , float(raw_data[3])),
-                    ("dewPoint"    , float(raw_data[4]))
+                    ("dateTime"    , raw_data4[0]),
+                    ("humidity"    , float(raw_data4[1])),
+                    ("pressure"    , float(raw_data4[2]) / 100),
+                    ("temperature" , float(raw_data4[3])),
+                    ("dewPoint"    , float(raw_data4[4]))
                 ])
-                corr.writeJSONLatestClimate(climate_dict,sensor)
-                mSR.BME280V3WriteI2c(raw_data)
+                corr.writeJSONLatestClimate(climate_dict,sensor4)
+                mSR.BME280V3WriteI2cDREAM(raw_data4, sensor4)
+            if bme280v3_valid3:
+                raw_data3 = bme280v3_bus3.read()
+                climate_dict = OrderedDict([
+                    ("dateTime"    , raw_data3[0]),
+                    ("humidity"    , float(raw_data3[1])),
+                    ("pressure"    , float(raw_data3[2]) / 100),
+                    ("temperature" , float(raw_data3[3])),
+                    ("dewPoint"    , float(raw_data3[4]))
+                ])
+                corr.writeJSONLatestClimate(climate_dict,sensor3)
+                mSR.BME280V3WriteI2c(raw_data3, sensor3)
             time.sleep(1)     
             
             # print("======= TMP117 ========")
