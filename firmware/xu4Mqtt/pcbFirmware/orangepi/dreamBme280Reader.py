@@ -80,7 +80,7 @@ def main(loopInterval):
                     ("dewPoint"    , float(raw_data3[4]))
                 ])
                 corr.writeJSONLatestClimate(climate_dict,sensor3)
-                mSR.BME280V3WriteI2c(raw_data3, sensor3)
+                mSR.BME280V3WriteI2cDREAM(raw_data3, sensor3)
             time.sleep(1)     
             
             # print("======= TMP117 ========")
