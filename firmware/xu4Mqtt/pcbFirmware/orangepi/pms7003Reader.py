@@ -3,7 +3,7 @@ import sys
 import time
 import os
 from collections import OrderedDict
-from i2cMints.pms7003 import PMS7003
+from i2cMints.uart_pms7003 import PMS7003
 from mintsXU4 import mintsSensorReader as mSR
 
 debug        = False
@@ -20,12 +20,12 @@ def main():
     while True:
         try:
             if valid:
-                sensor_data = pms.read()
+                dateTime, sensor_data = pms.read()
                 if sensor_data:
                     print(f"======= {sensorName} ========")
                     print(sensor_data)
                     
-                    mSR.sensorFinisher(sensor_data["dateTime"], sensorName, sensor_data)
+                    mSR.sensorFinisher(dateTime, sensorName, sensor_data)
 
             time.sleep(1)
             startTime = mSR.delayMints(time.time() - startTime, loopInterval)
