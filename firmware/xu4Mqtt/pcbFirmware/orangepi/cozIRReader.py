@@ -19,7 +19,7 @@ import sys
 
 
 dataFolderReference    = mD.dataFolderReference
-portIn                 = "/dev/ttyS0"
+portIn                 = "/dev/ttyS3"
 baudRate               = 9600
 
 # May change depending on location
