@@ -23,9 +23,13 @@ from multiprocessing import Pool, freeze_support
 from audioMints import config as cfg
 from audioMints import functions as fn
 
-sampleRate         = 44100  # Sample rate
+# AudioMoth update: the AudioMoth only streams at the rate set in the AudioMoth
+# USB Microphone App (default 384kHz). Asking for any other rate (old value was
+# 44100) fails. BirdNET resamples to 48kHz on its own, so detection is unchanged.
+sampleRate         = 384000  # Sample rate (must match the AudioMoth's setting)
 period             = 9 # Duration of recording
-channelSelected    = 1
+channelSelected    = 1 # AudioMoth is mono, so 1 channel stays the same
+micName            = "AudioMoth USB Microphone" # AudioMoth update: name the mic reports over USB
 audioFileNamePre   = "mintsAudio"
 tmpFolderName      = "/home/teamlary/NC/"
 minConfidence      = .3
@@ -36,8 +40,8 @@ dataFolder         = mD.dataFolder
 
 currentIndex = 0
 
-# If this does not work, try altering the device number in the makeAudioFile function 
-# using the USB device number provided by
+# AudioMoth update: the mic is found by name (micName above), not device number.
+# If it is not found, check the name it shows up with by running
 # import sounddevice as sd
 # print(sd.query_devices())
 # in a live python terminal
@@ -49,7 +53,8 @@ def main(cfg,currentIndex):
     while True:
         try:
             dateTime = datetime.datetime.now()
-            recording = fn.makeAudioFile(sampleRate,period,channelSelected,audioFileNamePre+ ".wav",tmpFolderName)
+            # AudioMoth update: micName is passed in so the AudioMoth is the device we record from
+            recording = fn.makeAudioFile(sampleRate,period,channelSelected,audioFileNamePre+ ".wav",tmpFolderName,micName)
             if recording is None:
                 time.sleep(1)
                 continue

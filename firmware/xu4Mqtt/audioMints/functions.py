@@ -381,8 +381,10 @@ def findUsbDevice(target_name="USB Audio Device"):
             else:
                 return None
 
-def makeAudioFile(sampleRateIn,audioLength,channelNum,fileName,fileSaveLocation):
-    deviceNum = findUsbDevice()
+# AudioMoth update: deviceName is now passed in from audioReader.py, because the
+# AudioMoth shows up as "<rate>kHz AudioMoth USB Microphone", not "USB Audio Device"
+def makeAudioFile(sampleRateIn,audioLength,channelNum,fileName,fileSaveLocation,deviceName):
+    deviceNum = findUsbDevice(deviceName)
     if deviceNum is None:
         return None
     recording = sd.rec(int(audioLength * sampleRateIn), samplerate=sampleRateIn, channels=channelNum, device=deviceNum)
