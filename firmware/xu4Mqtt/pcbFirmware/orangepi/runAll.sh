@@ -11,9 +11,9 @@ fi
 
 source .venv/bin/activate
 
-kill $(pgrep -f 'python3 bme280Reader.py')
+kill $(pgrep -f 'python3 dreamBme280Reader.py')
 sleep 5
-python3 bme280Reader.py &
+python3 dreamBme280Reader.py &
 sleep 5
 
 
@@ -38,7 +38,17 @@ sleep 5
 python3 sht40Reader.py &
 sleep 5
 
-kill $(pgrep -f 'pms7003Reader.py')
+kill $(pgrep -f 'pms7003Reader3.py')
 sleep 5
-python3 pms7003Reader.py &
+python3 pms7003Reader3.py &
 sleep 5
+
+kill $(pgrep -f 'ips7100CalibratedReader.py')
+sleep 5
+python3 ips7100CalibratedReader.py &
+sleep 5
+
+kill $(pgrep -f 'tgs.py')
+sleep 5
+python3 tgs.py &
+
